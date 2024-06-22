@@ -1,3 +1,0 @@
-
-
-def yolo_stage()

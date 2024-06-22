@@ -30,7 +30,7 @@ class Database(AbstractDatabase):
     def dispose_instance(self) -> None:
         self.connection.close()
 
-    def insert(self, table_name: str, data: Dict) -> None:
+    def create(self, table_name: str, data: Dict) -> None:
         data_id = data.pop('id')
         serialized_data = json.dumps(data)
         self.cursor.execute(
@@ -56,18 +56,18 @@ class Database(AbstractDatabase):
         )
         self.connection.commit()
 
-    def query(self, table_name: str, data_id: str) -> Dict:
+    def read(self, table_name: str, id: str) -> Dict:
         self.cursor.execute(
             f"SELECT data FROM {table_name} WHERE id = ?",
-            (data_id,)
+            (id,)
         )
         result = self.cursor.fetchone()
         if result:
             result = json.loads(result[0])
-            result['id'] = data_id
+            result['id'] = id
             return result
         else:
-            raise KeyError(f"No data found for ID: {data_id} in table: {table_name}")
+            raise KeyError(f"No data found for ID: {id} in table: {table_name}")
 
     def exists(self, table_name: str, id: str) -> bool:
         self.cursor.execute(
@@ -96,3 +96,7 @@ class Database(AbstractDatabase):
         else:
             raise ValueError("Safety check failed; clear_table operation aborted.")
 
+    def get_all(self, table_name: str) -> list:
+        self.cursor.execute(f"SELECT * FROM {table_name}")
+        rows = self.cursor.fetchall()
+        return [{'id': row[0], 'data': json.loads(row[1])} for row in rows]

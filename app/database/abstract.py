@@ -16,7 +16,7 @@ class AbstractDatabase(ABC):
         pass
 
     @abstractmethod
-    def insert(self, table_name: str, data: Dict) -> None:
+    def create(self, table_name: str, data: Dict) -> None:
         """
         Inserts a new data entry into the specified table.
         
