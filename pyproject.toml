@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "fast-paperwork"
+version = "0.1.0"
+description = ""
+authors = ["BrianP8701 <brianp8701@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^2.7.4"
+fastapi = "^0.111.0"
+pypdf = "^4.2.0"
+pymupdf = "^1.24.5"
+pdf2image = "^1.17.0"
+pypdf2 = "^3.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+requests = "^2.32.3"
+bs4 = "^0.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
