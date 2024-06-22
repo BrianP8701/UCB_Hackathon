@@ -2,7 +2,7 @@
 
 All PackageRows or PackageFormRows are to be displayed in the table in the frontend.
 
-### POST /processPackage
+### POST /createPackage
 **Request Parameters:**
 - `files` (List[File])
 - `name` (str)
