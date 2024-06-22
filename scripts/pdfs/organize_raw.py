@@ -1,4 +1,4 @@
-from fast_paperwork.services.pdf_service import PdfService
+from app.services.pdf_service import PdfService
 import os
 
 pdf_service = PdfService()
