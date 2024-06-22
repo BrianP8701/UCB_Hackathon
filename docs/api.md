@@ -30,6 +30,15 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 
 ---------------------------------------------------------------------------------------------
 
+### GET /getPackageStatus
+**Request Parameters:**
+- `packageId` (str)
+
+**Response:**
+- `packageStatus` (PackageStatus)
+
+---------------------------------------------------------------------------------------------
+
 ### POST /createPackageForm
 **Request Parameters:**
 - `name` (str)
@@ -51,7 +60,7 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 
 ### GET /getPackageFormRows
 **Request Parameters:**
-- None
+- `packageId` (str)
 
 **Response:**
 - `packageFormRows` (List[PackageFormRows]): A list of package forms with minimal details.
@@ -63,7 +72,7 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 
 **type CreatePackageRequest**
 - `packageName` (str)
-- `rawFiles` (List[File])
+- `rawFiles` (List[str])
 
 ---------------------------------------------------------------------------------------------
 
@@ -78,14 +87,16 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 - `packageId` (str)
 - `packageName` (str)
 - `packageStatus` (PackageStatus)
-- `rawFiles` (List[File])
-- `labeledFiles` (List[File]): If status is `complete`
+- `rawFiles` (List[str]) :          Paths to the images of initial files passed in.
+- `filesWithBoxes` (List[str])      Paths to the images with boxes drawn on.
+- `formFields` (List[FormField])    Form fields created by GPT for the final form
 
 ---------------------------------------------------------------------------------------------
 
 **type PackageFormRow**
 - `packageFormId` (str)
 - `packageName` (str)
+- `googleFormUrl` (str)
 - `name` (str)
 
 ---------------------------------------------------------------------------------------------
@@ -94,8 +105,8 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 - `packageFormId` (str)
 - `packageName` (str)
 - `name` (str)
-- `typeformUrl` (str)
-- `files` ([File]) : Filled out files from typeform
+- `googleFormUrl` (str)
+- `files` ([str]) : Paths to the filled out pdfs
 
 ---------------------------------------------------------------------------------------------
 
@@ -104,3 +115,10 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 - `analyzing` : `Analyzing Form Boxes With GPT4o`
 - `creating` : `Creating Form with GPT4o`
 - `complete` : `Complete`
+
+---------------------------------------------------------------------------------------------
+
+**type FormField**
+- `name` (str)
+- `description` (str)
+- `type` (FormFieldType)

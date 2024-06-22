@@ -1,6 +1,12 @@
 from pydantic import BaseModel
 from typing import List
 
+
+"""
+Frontend types
+"""
+enum
+
 class File(BaseModel):
     name: str
     content: bytes

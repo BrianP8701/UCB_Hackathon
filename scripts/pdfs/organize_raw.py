@@ -1,4 +1,4 @@
-from app.services.pdf_service import PdfService
+from app.services.PdfService import PdfService
 import os
 
 pdf_service = PdfService()

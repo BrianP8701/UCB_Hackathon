@@ -1,7 +1,7 @@
 import requests
 import re
 
-from app.services.pdf_service import PdfService
+from app.services.PdfService import PdfService
 
 pdf_service = PdfService()
 

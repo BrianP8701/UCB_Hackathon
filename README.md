@@ -1,0 +1,1 @@
+python -c "import torch; model = torch.load('/Users/brianprzezdziecki/Code/UCB_Hackathon/yolo.pt'); torch.onnx.export(model, torch.randn(1, 3, 224, 224), 'model.onnx', input_names=['input'], output_names=['output'])"
