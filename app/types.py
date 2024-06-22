@@ -16,21 +16,23 @@ class PackageRow(BaseModel):
     packageName: str
     packageStatus: str
 
+class FilledOutPackage(BaseModel):
+    email: str
+    pdfs: List[str]
+
 class Package(BaseModel):
     packageId: str
     packageName: str
     packageStatus: str
-    rawFiles: List[File]
-    labeledFiles: List[File]
+    originalPdfs: List[str]
+    imagesWithBoxes: List[str]
+    formFields: List[FormField]
+    filledOutPackages: List[FilledOutPackage]
+    googleFormUrl: str
 
-class PackageFormRow(BaseModel):
-    packageFormId: str
-    packageName: str
-    name: str
 
-class PackageForm(BaseModel):
-    packageFormId: str
-    packageName: str
+
+class FormField(BaseModel):
     name: str
-    typeformUrl: str
-    files: List[File]
+    description: str
+    form_field_type: FormFieldType

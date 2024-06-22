@@ -37,42 +37,20 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 **Response:**
 - `packageStatus` (PackageStatus)
 
----------------------------------------------------------------------------------------------
 
-### POST /createPackageForm
-**Request Parameters:**
-- `name` (str)
-- `packageId` (str)
 
-**Response:**
-- `packageFormRows` (List[PackageFormRow])
 
----------------------------------------------------------------------------------------------
 
-### GET /getPackageForm
-**Request Parameters:**
-- `packageFormId` (str): The ID of the package form.
 
-**Response:**
-- `packageForm`: The package form.
 
----------------------------------------------------------------------------------------------
 
-### GET /getPackageFormRows
-**Request Parameters:**
-- `packageId` (str)
-
-**Response:**
-- `packageFormRows` (List[PackageFormRows]): A list of package forms with minimal details.
-
----------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 
 ## Data Types
 
 **type CreatePackageRequest**
 - `packageName` (str)
-- `rawFiles` (List[str])
+- `pdfs` (List[str])
 
 ---------------------------------------------------------------------------------------------
 
@@ -87,34 +65,25 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 - `packageId` (str)
 - `packageName` (str)
 - `packageStatus` (PackageStatus)
-- `rawFiles` (List[str]) :          Paths to the images of initial files passed in.
-- `filesWithBoxes` (List[str])      Paths to the images with boxes drawn on.
-- `formFields` (List[FormField])    Form fields created by GPT for the final form
+- `rawPdfs` (List[str]) :               Paths to the images of initial files passed in.
+- `imagesWithBoxes` (List[str])         Paths to the images with boxes drawn on.
+- `formFields` (List[FormField])        Form fields created by GPT for the final form
+- `googleFormUrl` (str)
+- `filledOutPackages` (List[str])    Paths to the filled out pdfs
 
 ---------------------------------------------------------------------------------------------
 
-**type PackageFormRow**
-- `packageFormId` (str)
-- `packageName` (str)
-- `googleFormUrl` (str)
-- `name` (str)
-
----------------------------------------------------------------------------------------------
-
-**type PackageForm**
-- `packageFormId` (str)
-- `packageName` (str)
-- `name` (str)
-- `googleFormUrl` (str)
-- `files` ([str]) : Paths to the filled out pdfs
+**type FilledOutPackage**
+- `email` (str)
+- `pdfs` (List[str])
 
 ---------------------------------------------------------------------------------------------
 
 **enum PackageStatus**
-- `detecting` : `Detecting Form Boxes with YOLO`
-- `analyzing` : `Analyzing Form Boxes With GPT4o`
-- `creating` : `Creating Form with GPT4o`
-- `complete` : `Complete`
+- `DETECTING` : `Detecting Form Boxes with YOLO`
+- `ANALYZING` : `Analyzing Form Boxes With GPT4o`
+- `CREATING` : `Creating Form with GPT4o`
+- `COMPLETE` : `Complete`
 
 ---------------------------------------------------------------------------------------------
 
@@ -122,3 +91,10 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 - `name` (str)
 - `description` (str)
 - `type` (FormFieldType)
+
+---------------------------------------------------------------------------------------------
+
+**enum FormFieldType**
+- `TEXT` : `Text`
+- `MULTIPLE_CHOICE` : `Multiple Choice`
+- `CHECKBOX` : `Checkbox`

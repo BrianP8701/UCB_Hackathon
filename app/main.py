@@ -1,11 +1,15 @@
 from fastapi import FastAPI
+
 from app.types import *
+from app.dao.PackageDao import PackageDao
 
 app = FastAPI()
 
 @app.post("/processPackage")
 async def process_package(files: List[File], name: str) -> List[PackageRow]:
-    return {"packageRows": [{"packageId": "123", "packageName": name, "packageStatus": "complete"}]}
+    packageDao = PackageDao()
+    package = packageDao.create_package(name, files)
+    return {"packageRows": [{"packageId": package.id, "packageName": package.name, "packageStatus": package.status}]}
 
 @app.get("/getPackagesRows")
 async def get_packages_rows() -> List[PackageRow]:
