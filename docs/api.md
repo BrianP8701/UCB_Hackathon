@@ -1,5 +1,7 @@
 ## API Documentation
 
+All PackageRows or PackageFormRows are to be displayed in the table in the frontend.
+
 ### POST /processPackage
 **Request Parameters:**
 - `files` (List[File])
@@ -26,6 +28,7 @@
 **Response:**
 - `package` (Package)
 
+---------------------------------------------------------------------------------------------
 
 ### POST /createPackageForm
 **Request Parameters:**
@@ -92,7 +95,7 @@
 - `packageName` (str)
 - `name` (str)
 - `typeformUrl` (str)
-- `filledOutFileUrls` ([File])
+- `files` ([File]) : Filled out files from typeform
 
 ---------------------------------------------------------------------------------------------
 
