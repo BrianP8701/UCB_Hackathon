@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Dict
+from typing import Any, Dict, Callable
 
 
 
@@ -46,7 +46,7 @@ class AbstractDatabase(ABC):
         pass
 
     @abstractmethod
-    def query(self, table_name: str, id: str) -> Dict:
+    def read(self, table_name: str, id: str) -> Dict:
         """
         Queries the database for a data entry by its identifier inside the data dict.
         
@@ -78,7 +78,7 @@ class AbstractDatabase(ABC):
         pass
 
     @abstractmethod
-    def perform_transaction(self, operations: callable) -> None:
+    def perform_transaction(self, operations: Callable[[], None]) -> None:
         """
         Performs a series of operations within a database transaction.
         

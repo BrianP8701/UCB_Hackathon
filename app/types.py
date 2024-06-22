@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Dict
 from enum import Enum
 
 
@@ -13,7 +13,7 @@ class FePackageRow(BaseModel):
 
 class FeFilledOutPackage(BaseModel):
     email: str
-    pdfPaths: List[str]
+    pdfPath: str
 
 class FeFormField(BaseModel):
     name: str
@@ -24,7 +24,7 @@ class FePackage(BaseModel):
     packageId: str
     packageName: str
     packageStatus: str
-    originalPdfPaths: List[str]
+    originalPdfPath: str
     imagesWithBoxesPaths: List[str]
     formFields: List[FeFormField]
     filledOutPackages: List[FeFilledOutPackage]
@@ -53,15 +53,11 @@ class FormFieldType(Enum):
     checkbox = "checkbox"
     dropdown = "dropdown"
 
-class File(BaseModel):
-    id: str
-    name: str
-    content: bytes
-
 class FormField(BaseModel):
     name: str
     description: str
     form_field_type: FormFieldType
+    rect: List[int]
 
 class FilledOutPackage(BaseModel):
     email: str
@@ -71,17 +67,21 @@ class Package(BaseModel):
     id: str
     name: str
     status: PackageStatus
-    original_pdf_paths: List[str]
-    images_with_boxes_paths: List[str]
+    original_pdf_id: str
+    original_image_ids: List[str] # In order of pages
+    images_with_boxes_ids: List[str]
     form_fields: List[FormField]
-    filled_out_packages: List[FilledOutPackage]
+    filled_out_package_ids: List[str]
     google_form_url: str
 
+class Image(BaseModel):
+    id: str
+    pdf_id: str
+    page: int
+    image: bytes
 
 
 class File(BaseModel):
     id: str
     name: str
     content: bytes
-
-

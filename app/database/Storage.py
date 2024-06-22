@@ -13,8 +13,8 @@ class Storage:
             cls._instance.storage_path = os.getenv('STORAGE_PATH')
         return cls._instance
 
-    def create(self, file_path: str, file_bytes: bytes) -> None:
-        full_path = os.path.join(self.storage_path, file_path)
+    def create(self, file_path: str, file_bytes: bytes, extension: str) -> None:
+        full_path = os.path.join(self.storage_path, file_path, extension)
         with open(full_path, 'wb') as file:
             file.write(file_bytes)
 

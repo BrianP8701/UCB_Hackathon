@@ -14,7 +14,7 @@ class PackageDao:
 
     @classmethod
     def get_package(cls, package_id: str) -> Package:
-        result = database.query("packages", package_id)
+        result = database.read("packages", package_id)
         if result:
             package_data = json.loads(result['data'])
             package_data['packageId'] = package_id
@@ -23,7 +23,7 @@ class PackageDao:
             raise KeyError(f"No package found with ID: {package_id}")
 
     @classmethod
-    def get_package_rows(cls) -> FePackageRow:
+    def get_package_rows(cls) -> List[FePackageRow]:
         package_rows = database.get_all("packages")
         return [package_dict_to_fe_package_row(package_dict) for package_dict in package_rows]
 

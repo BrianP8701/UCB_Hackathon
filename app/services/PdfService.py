@@ -1,18 +1,18 @@
 from typing import List, Tuple
 from pdf2image import convert_from_path
-from PyPDF2 import PdfReader
+from PyPDF2 import PdfReader, PdfWriter
 from os.path import isfile
 import requests
 import os
 import fitz
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import shutil
+import io
 
 class PdfService:
-    def __init__(self):
-        pass
-
-    def get_file_object(self, file_path: str) -> str:
+    
+    @classmethod
+    def get_file_object(cls, file_path: str) -> str:
         """
         Get the file object from a file path.
         """
@@ -20,7 +20,8 @@ class PdfService:
             raise FileNotFoundError(f"File {file_path} does not exist.")
         return file_path
 
-    def convert_pdf_to_images(self, file_path: str) -> List:
+    @classmethod
+    def convert_pdf_to_images(cls, file_path: str) -> List:
         """
         Convert a PDF file to a list of images.
         """
@@ -30,7 +31,8 @@ class PdfService:
         images = convert_from_path(file_path, dpi=300, output_folder=None, fmt='jpeg')
         return images
 
-    def get_all_pdf_paths(self, folder_path: str) -> List[str]:
+    @classmethod
+    def get_all_pdf_paths(cls, folder_path: str) -> List[str]:
         """
         Get all PDF paths from a given folder path.
         """
@@ -41,7 +43,8 @@ class PdfService:
         return pdf_paths
 
 
-    def convert_and_save_pdfs_to_images(self, pdf_paths: List[List[str]], output_folder: str) -> None:
+    @classmethod
+    def convert_and_save_pdfs_to_images(cls, pdf_paths: List[List[str]], output_folder: str) -> None:
         """
         Convert a list of lists of PDF paths to images concurrently and save them to a given folder.
         """
@@ -50,7 +53,7 @@ class PdfService:
 
         def convert_and_save(pdf_path: str) -> None:
             try:
-                images = self.convert_pdf_to_images(pdf_path)
+                images = cls.convert_pdf_to_images(pdf_path)
                 for i, image in enumerate(images):
                     print(f"Saving image {i} from {pdf_path}")
                     image_path = os.path.join(output_folder, f"{os.path.basename(pdf_path).replace('.', '-')}_{i}.jpeg")
@@ -65,7 +68,8 @@ class PdfService:
             for future in as_completed(futures):
                 future.result() 
 
-    def is_pdf_corrupted(self, file_path: str) -> bool:
+    @classmethod
+    def is_pdf_corrupted(cls, file_path: str) -> bool:
         """
         Check if a PDF file is corrupted.
         """
@@ -78,17 +82,19 @@ class PdfService:
             print(f"Error reading {file_path}: {e}")
             return True
 
-    def remove_corrupted_pdfs(self, folder_path: str) -> None:
+    @classmethod
+    def remove_corrupted_pdfs(cls, folder_path: str) -> None:
         """
         Remove corrupted PDF files from a specified folder.
         """
-        pdf_paths = self.get_all_pdf_paths(folder_path)
+        pdf_paths = cls.get_all_pdf_paths(folder_path)
         for pdf_path in pdf_paths:
-            if self.is_pdf_corrupted(pdf_path):
+            if cls.is_pdf_corrupted(pdf_path):
                 os.remove(pdf_path)
                 print(f"Removed corrupted PDF: {pdf_path}")
 
-    def download_pdfs(self, pdf_urls: List[str], folder_path: str, file_name: str) -> None:
+    @classmethod
+    def download_pdfs(cls, pdf_urls: List[str], folder_path: str, file_name: str) -> None:
         """
         Download PDF files from a list of URLs and save them to a folder.
         """
@@ -99,7 +105,8 @@ class PdfService:
                 file.write(response.content)
             count += 1
 
-    def get_form_fields_and_rectangles(self, pdf_path: str) -> Tuple[int, List]:
+    @classmethod
+    def get_form_fields_and_rectangles(cls, pdf_path: str) -> Tuple[int, List]:
         """
         Get the form fields and corresponding rectangles from a PDF file.
         """
@@ -112,7 +119,8 @@ class PdfService:
 
         return len(form_fields), form_fields
 
-    def count_files_in_folder(self, folder_path: str) -> int:
+    @classmethod
+    def count_files_in_folder(cls, folder_path: str) -> int:
         """
         Count the number of files in a given folder.
         """
@@ -120,7 +128,8 @@ class PdfService:
             raise FileNotFoundError(f"Folder {folder_path} does not exist.")
         return len(os.listdir(folder_path))
 
-    def batch_files_in_folder(self, folder_path: str, batch_folder_path: str, batch_size: int, batch_name: str) -> None:
+    @classmethod
+    def batch_files_in_folder(cls, folder_path: str, batch_folder_path: str, batch_size: int, batch_name: str) -> None:
         """
         Create batches of files from a folder, each batch containing up to 'batch_size' files and save them to a specified batch folder path.
         """
@@ -139,7 +148,8 @@ class PdfService:
                 shutil.move(os.path.join(folder_path, file), batch_folder)
             batch_count += 1
 
-    def consolidate_folders(self, source_folder_paths: List[str], destination_folder_path: str) -> None:
+    @classmethod
+    def consolidate_folders(cls, source_folder_paths: List[str], destination_folder_path: str) -> None:
         """
         Consolidate files from multiple folders into a single folder.
         """
@@ -156,3 +166,19 @@ class PdfService:
                     shutil.copytree(source, destination)
                 else:
                     shutil.copy(source, destination)
+
+    @classmethod
+    def merge_pdfs(cls, pdf_bytes_list: List[bytes]) -> bytes:
+        """
+        Merge a list of PDF files (in bytes) into a single PDF and return the merged PDF as bytes.
+        """
+        pdf_writer = PdfWriter()
+        
+        for pdf_bytes in pdf_bytes_list:
+            pdf_reader = PdfReader(io.BytesIO(pdf_bytes))
+            for page in pdf_reader.pages:
+                pdf_writer.add_page(page)
+        
+        output_stream = io.BytesIO()
+        pdf_writer.write(output_stream)
+        return output_stream.getvalue()

@@ -4,6 +4,7 @@ from app.types import *
 from app.dao.PackageDao import PackageDao
 from app.pipeline import begin_pipeline_processing
 from app.formatters import *
+from app.services.PackageService import PackageService
 
 app = FastAPI()
 
@@ -14,8 +15,7 @@ class CreatePackageRequest(BaseModel):
 
 @app.post("/createPackage")
 async def create_package(request: CreatePackageRequest, background_tasks: BackgroundTasks) -> FePackage:
-    packageDao = PackageDao()
-    package: Package = packageDao.create_package(request.name, request.files)
+    package: Package = await PackageService.create_package(request.name, request.files)
 
     background_tasks.add_task(begin_pipeline_processing, package)
 

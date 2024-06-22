@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Callable
 import sqlite3
 import json
 import os
@@ -7,15 +7,19 @@ from dotenv import load_dotenv
 from app.database.abstract import AbstractDatabase
 
 load_dotenv()
-db_connection_string = os.getenv("DB_CONNECTION_STRING")
+db_connection_string: str | None = os.getenv("DB_CONNECTION_STRING")
 
 class Database(AbstractDatabase):
     _instance = None
+    connection: sqlite3.Connection
+    cursor: sqlite3.Cursor
+
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(Database, cls).__new__(cls)
-            db_path = db_connection_string
-            cls._instance.connection = sqlite3.connect(db_path, check_same_thread=False)
+            if db_connection_string is None:
+                raise ValueError("DB_CONNECTION_STRING environment variable is not set")
+            cls._instance.connection = sqlite3.connect(db_connection_string, check_same_thread=False)
             cls._instance.cursor = cls._instance.connection.cursor()
             cls._instance.create_tables()
         return cls._instance
@@ -80,7 +84,7 @@ class Database(AbstractDatabase):
         self.cursor.execute(query)
         return self.cursor.fetchall()
 
-    def perform_transaction(self, operations: callable) -> None:
+    def perform_transaction(self, operations: Callable[[], None]) -> None:
         try:
             self.connection.execute("BEGIN")
             operations()

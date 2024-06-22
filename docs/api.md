@@ -64,12 +64,12 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 **type Package**
 - `packageId` (str)
 - `packageName` (str)
-- `packageStatus` (PackageStatus)
-- `rawPdfs` (List[str]) :               Paths to the images of initial files passed in.
-- `imagesWithBoxes` (List[str])         Paths to the images with boxes drawn on.
+- `packageStatus` (str)
+- `originalPdfPath` (List[str]) :               Paths to the images of initial files passed in.
+- `imagesWithBoxesPaths` (List[str])         Paths to the images with boxes drawn on.
 - `formFields` (List[FormField])        Form fields created by GPT for the final form
 - `googleFormUrl` (str)
-- `filledOutPackages` (List[str])    Paths to the filled out pdfs
+- `filledOutPackages` (List[str])
 
 ---------------------------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 **type FormField**
 - `name` (str)
 - `description` (str)
-- `type` (FormFieldType)
+- `formFieldType` (str)
 
 ---------------------------------------------------------------------------------------------
 
