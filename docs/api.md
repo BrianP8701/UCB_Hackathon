@@ -8,7 +8,7 @@ All PackageRows or PackageFormRows are to be displayed in the table in the front
 - `name` (str)
 
 **Response:**
-- `packageRows` (List[PackageRow])
+- `packageRows` (Package)
 
 ---------------------------------------------------------------------------------------------
 
