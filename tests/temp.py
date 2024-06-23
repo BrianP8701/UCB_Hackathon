@@ -1,22 +1,25 @@
-from app.services.PdfService import PdfService
+import requests
+import base64
 
-pdf_service = PdfService()
+url = "http://127.0.0.1:8000/createPackage"
 
-# data/raw/jpgs/irs_forms
-# data/raw/jpgs/nar_realtor
-# data/raw/jpgs/random
-folders = ['data/raw/jpgs/irs_forms', 'data/raw/jpgs/nar_realtor', 'data/raw/jpgs/random']
+# List of file paths
+file_paths = ["data/raw/pdfs/nar_realtor/nar_realtor_8.pdf"]
 
-# pdf_service.consolidate_folders(folders, 'data/raw/jpgs/consolidated')
+# Read and encode files
+encoded_files = []
+for file_path in file_paths:
+    with open(file_path, "rb") as file:
+        encoded_files.append(base64.b64encode(file.read()).decode('utf-8'))  # Encode to base64 and convert to string
 
-pdf_service.batch_files_in_folder('data/raw/jpgs/consolidated', 'data/raw/batches', 500, 'image')
+# Prepare the data for the request
+data = {
+    "name": "Test Package",
+    "files": encoded_files
+}
 
-# number_of_irs_forms = pdf_service.count_files_in_folder('data/raw/jpgs/irs_forms')
-# number_of_nar_realtor = pdf_service.count_files_in_folder('data/raw/jpgs/nar_realtor')
-# number_of_random = pdf_service.count_files_in_folder('data/raw/jpgs/random')
 
-# print(number_of_irs_forms)
-# print(number_of_nar_realtor)
-# print(number_of_random)
+response = requests.post(url, json=data)
 
-# print(number_of_irs_forms + number_of_nar_realtor + number_of_random)
+print(response.status_code)
+print(response.json())

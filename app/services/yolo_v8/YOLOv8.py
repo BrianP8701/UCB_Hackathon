@@ -5,7 +5,7 @@ import onnxruntime
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from yolo_v8.utils import xywh2xyxy, nms, draw_detections
+from app.services.yolo_v8.utils import xywh2xyxy, nms, draw_detections
 
 class YOLOv8:
     def __init__(self, path, conf_thres=0.7, iou_thres=0.5):

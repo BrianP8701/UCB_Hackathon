@@ -9,6 +9,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import shutil
 import io
 
+from app.utils import get_path_from_file_id
+
 class PdfService:
     
     @classmethod
@@ -21,15 +23,20 @@ class PdfService:
         return file_path
 
     @classmethod
-    def convert_pdf_to_images(cls, file_path: str) -> List:
+    def convert_pdf_to_images(cls, file_path: str) -> List[bytes]:
         """
-        Convert a PDF file to a list of images.
+        Convert a PDF file to a list of images as bytes.
         """
         if not file_path.endswith('.pdf'):
             raise ValueError(f"File {file_path} is not a PDF.")
-        
-        images = convert_from_path(file_path, dpi=300, output_folder=None, fmt='jpeg')
-        return images
+
+        images = convert_from_path(get_path_from_file_id(file_path), dpi=300, output_folder=None, fmt='jpeg')
+        image_bytes = []
+        for image in images:
+            img_byte_arr = io.BytesIO()
+            image.save(img_byte_arr, format='JPEG')
+            image_bytes.append(img_byte_arr.getvalue())
+        return image_bytes
 
     @classmethod
     def get_all_pdf_paths(cls, folder_path: str) -> List[str]:
@@ -41,7 +48,6 @@ class PdfService:
         
         pdf_paths = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.pdf')]
         return pdf_paths
-
 
     @classmethod
     def convert_and_save_pdfs_to_images(cls, pdf_paths: List[List[str]], output_folder: str) -> None:

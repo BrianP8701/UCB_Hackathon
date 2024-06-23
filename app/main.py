@@ -1,4 +1,6 @@
 from fastapi import FastAPI, BackgroundTasks
+import base64
+import logging
 
 from app.types import *
 from app.dao.PackageDao import PackageDao
@@ -8,6 +10,26 @@ from app.services.PackageService import PackageService
 
 app = FastAPI()
 
+logging.basicConfig(
+    filename='app.log',  # Log file name
+    level=logging.INFO,  # Log level
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
+    datefmt='%Y-%m-%d %H:%M:%S'  # Date format
+)
+
+class CustomFileHandler(logging.FileHandler):
+    def emit(self, record):
+        super().emit(record)
+        self.stream.write('\n\n')  # Add two new lines
+        self.flush()
+
+# Replace the default handler with the custom handler
+for handler in logging.getLogger().handlers:
+    if isinstance(handler, logging.FileHandler):
+        logging.getLogger().removeHandler(handler)
+
+logging.getLogger().addHandler(CustomFileHandler('app.log'))
+
 
 class CreatePackageRequest(BaseModel):
     files: List[bytes]
@@ -15,7 +37,8 @@ class CreatePackageRequest(BaseModel):
 
 @app.post("/createPackage")
 async def create_package(request: CreatePackageRequest, background_tasks: BackgroundTasks) -> FePackage:
-    package: Package = await PackageService.create_package(request.name, request.files)
+    decoded_files = [base64.b64decode(file) for file in request.files]  # Decode base64 strings to bytes
+    package: Package = await PackageService.create_package(request.name, decoded_files)
 
     background_tasks.add_task(begin_pipeline_processing, package)
 

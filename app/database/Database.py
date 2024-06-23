@@ -43,6 +43,18 @@ class Database(AbstractDatabase):
         )
         self.connection.commit()
 
+    def upsert(self, table_name: str, data: Dict) -> None:
+        data_id = data['id']
+        serialized_data = json.dumps(data)
+        self.cursor.execute(
+            f"""
+            INSERT INTO {table_name} (id, data) VALUES (?, ?)
+            ON CONFLICT(id) DO UPDATE SET data = excluded.data
+            """,
+            (data_id, serialized_data)
+        )
+        self.connection.commit()
+
     def update(self, table_name: str, data: Dict) -> None:
         data_id = data['id']
         serialized_data = json.dumps(data)

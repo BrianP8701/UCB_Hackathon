@@ -28,8 +28,7 @@ class FePackage(BaseModel):
     imagesWithBoxesPaths: List[str]
     formFields: List[FeFormField]
     filledOutPackages: List[FeFilledOutPackage]
-    googleFormUrl: str
-
+    typeformUrl: str
 
 
 
@@ -41,6 +40,7 @@ Backend types
 """
 
 class PackageStatus(Enum):
+    preprocessing = "Preprocessing"
     detecting = "Detecting Form Boxes with YOLO"
     analyzing = "Analyzing Form Boxes With GPT4o"
     creating = "Creating Form with GPT4o"
@@ -52,14 +52,18 @@ class FormFieldType(Enum):
     date = "date"
     checkbox = "checkbox"
     dropdown = "dropdown"
+    undetermined = "undetermined"
 
 class FormField(BaseModel):
+    id: str
     name: str
     description: str
     form_field_type: FormFieldType
-    rect: List[int]
+    bounding_box: List[int]
+    page: int
 
 class FilledOutPackage(BaseModel):
+    id: str
     email: str
     file_ids: List[str]
 
@@ -71,15 +75,8 @@ class Package(BaseModel):
     original_image_ids: List[str] # In order of pages
     images_with_boxes_ids: List[str]
     form_fields: List[FormField]
-    filled_out_package_ids: List[str]
-    google_form_url: str
-
-class Image(BaseModel):
-    id: str
-    pdf_id: str
-    page: int
-    image: bytes
-
+    filled_out_packages: List[str]
+    typeform_url: str
 
 class File(BaseModel):
     id: str

@@ -1,0 +1,107 @@
+Boxes: [[     1116.4      937.88      1842.6      1032.1]
+ [     266.69      843.68      1052.5      936.33]]
+
+
+Boxes: [-1, -1, -1, -1]
+
+
+storage/f648f3a0-6c26-4a7c-a2d0-a0d3662dbe3c.jpeg
+
+
+Boxes: [[     1116.4      937.88      1842.6      1032.1]
+ [     266.69      843.68      1052.5      936.33]]
+
+
+storage/a8b34e72-3c4d-4f02-84c3-a3dd39605cdc.jpeg
+
+
+storage/728015fa-509a-4ff7-bb0e-94e0150564ec.jpeg
+
+
+storage/d430e907-09a8-45e3-9efd-1913db3e1423.jpeg
+
+
+storage/9aad4925-750d-460f-8139-4d49a9f6bfee.jpeg
+
+
+storage/e863e5bf-99f3-4d49-b6be-2aeb9311ef8a.jpeg
+
+
+storage/9171bc89-fbdf-4a5d-82f9-43b92f58b0a2.jpeg
+
+
+storage/650de095-fb95-4a6a-bfa0-a1121cb91211.jpeg
+
+
+storage/dea6b064-7103-437f-a750-74acaba4627b.jpeg
+
+
+storage/eedeb0ea-2b63-4816-80f9-96b6b81321dd.jpeg
+
+
+type of images: <class 'list'>, <class 'numpy.ndarray'>
+
+
+type of images: <class 'list'>, <class 'numpy.ndarray'>
+
+
+package.form_fields: [FormField(id='64c5e555-860c-4918-a5e1-7ab8fb95f009', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='bc0d7265-647b-4b55-b2f4-f86374be211c', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='1e4e0fc1-1b41-4c1d-833c-709a9c879693', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)]
+
+
+type of images: <class 'list'>, <class 'numpy.ndarray'>
+
+
+package.form_fields: [FormField(id='cdee39f3-f644-44d5-ab26-dd69fd0dcbbf', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='754e5afa-163e-4805-ab2e-7bed522cc09c', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='1d1c097c-fd5d-4b77-a4ca-7a97062fb7e8', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)]
+
+
+bounding box: [1116, 937, 1842, 1032]
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+bounding box: [266, 843, 1052, 936]
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+bounding box: []
+
+
+type of images: <class 'list'>, <class 'numpy.ndarray'>
+
+
+package.form_fields: [FormField(id='bd3c9674-0320-49f8-9d26-75986af4b586', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='77ae71fe-b358-4ccf-8847-ff6980ea988c', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='7818b8e1-6148-460a-bc2a-8593097c65e7', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)]
+
+
+bounding box: [1116, 937, 1842, 1032]
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+bounding box: [266, 843, 1052, 936]
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+bounding box: [1116, 937, 1842, 1032]
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+bounding box: [266, 843, 1052, 936]
+
+
+type of image: <class 'numpy.ndarray'>
+
+
+type of image: <class 'numpy.ndarray'>
+
+

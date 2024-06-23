@@ -8,9 +8,14 @@ storage = Storage()
 
 class PackageDao:
     @classmethod
-    def create_package(cls, package: Package) -> None:
+    def upsert(cls, package: Package) -> None:
         package_as_dict = package.model_dump()
-        database.create("packages", package_as_dict)        
+        package_as_dict['status'] = package_as_dict['status'].value
+        form_fields = []
+        for form_field in package_as_dict["form_fields"]:
+            form_field['form_field_type'] = form_field['form_field_type'].value
+        package_as_dict["form_fields"] = form_fields
+        database.upsert("packages", package_as_dict)
 
     @classmethod
     def get_package(cls, package_id: str) -> Package:

@@ -1,4 +1,4 @@
-from app.utils.uuid import create_uuid
+from app.utils import create_uuid
 from typing import List
 from app.database import Storage
 
@@ -9,9 +9,9 @@ class FileDao:
     def create_files(cls, file_bytes: List[bytes], extension: str) -> List[str]:
         file_ids = []
         for file in file_bytes:
-            file_id = create_uuid()
+            file_id = create_uuid() + extension
             file_ids.append(file_id)
-            storage.create(file_id, file, extension)
+            storage.create(file_id, file)
         return file_ids
 
     @classmethod
