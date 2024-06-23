@@ -14,7 +14,7 @@ instructor = InstructorService()
 
 
 class MapFormField(BaseModel):
-    no_mapping: bool = Field(..., description="Whether or not the field we are looking at has maps to a field in the existing form. If not output false, and we'll add this field as a new field in the form.")
+    no_mapping: bool = Field(..., description="Whether or not the field we are looking at has maps to a field in the existing form. If none of the existing fields map to this field, output True. Otherwise if there is a mapping, output False.")
     index: int = Field(..., description="If the field has a mapping, output the index of the field to map to. Otherwise, output -1 ")
 
 
