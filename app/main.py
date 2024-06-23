@@ -1,4 +1,4 @@
-from fastapi import FastAPI, BackgroundTasks
+from fastapi import FastAPI, BackgroundTasks, Form, File, UploadFile
 import base64
 import logging
 
@@ -34,6 +34,20 @@ logging.getLogger().addHandler(CustomFileHandler('app.log'))
 class CreatePackageRequest(BaseModel):
     files: List[bytes]
     name: str
+
+
+@app.post("/createPackage")
+async def create_package(
+    background_tasks: BackgroundTasks,
+    name: str = Form(...),
+    files: List[UploadFile] = File(...)
+    ) -> FePackage:
+    decoded_files = [await file.read() for file in files]
+    package: Package = await PackageService.create_package(name, decoded_files)
+
+    background_tasks.add_task(begin_pipeline_processing, package)
+
+    return package_to_fe_package(package)
 
 @app.post("/createPackage")
 async def create_package(request: CreatePackageRequest, background_tasks: BackgroundTasks) -> FePackage:

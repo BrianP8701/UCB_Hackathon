@@ -1,7 +1,5 @@
 from app.types import *
-from app.utils import get_path_from_file_id
-from app.services.YoloService import YoloService
-from app.utils import create_uuid
+from typing import Tuple
 from app.dao.PackageDao import PackageDao
 from app.services.PackageService import PackageService
 import asyncio
@@ -10,10 +8,7 @@ from pydantic import Field
 
 from app.services.InstructorService import InstructorService
 
-
 instructor = InstructorService()
-
-import logging
 
 class ExtractFormFieldType(Enum):
     text = "text"
@@ -23,7 +18,7 @@ class ExtractFormFieldType(Enum):
 
 class Description(BaseModel):
     name: str = Field(..., description="The name of the form field")
-    description: str = Field(..., description="The description of the form field")
+    description: str = Field(..., description="The description of the form field. The description needs to be very detailed encapuslating the full context of what goes in this field so we can dedupe later.")
     form_field_type: ExtractFormFieldType = Field(..., description="The type of the form field")
 
 async def run_description_stage(package: Package):
@@ -35,7 +30,7 @@ async def run_description_stage(package: Package):
     package.status = PackageStatus.analyzing
     PackageDao.upsert(package)
     
-    base64_images_with_boxes_and_form_fields = PackageService.get_image_with_boxes_for_each_form_field(package)
+    base64_images_with_boxes_and_form_fields: List[Tuple[str, FormField]] = await PackageService.get_image_with_boxes_for_each_form_field(package)
     
     # Process in batches of 20
     batch_size = 20
@@ -56,24 +51,21 @@ async def extract_description_from_image(image_base64: str, form_field: FormFiel
     """
     Extract the description from the image
     """
-    description = instructor.completion_with_base64_image_string(
+    description = await instructor.completion_with_base64_image_string(
         'You are helping to label a document form. You need to look at the image and using context from the entire page, '
         'determine the name and description of the form field. You also need to determine the type of the form field, it can be '
         'text, date, checkbox, or signature.',
         image_base64,
-        Description,
-        max_retries=5
+        Description
     )
-    
+
     form_field = FormField(
         id=form_field.id,
         name=description.name,
         description=description.description,
-        form_field_type=description.form_field_type,
+        form_field_type=FormFieldType(description.form_field_type.value),
         bounding_box=form_field.bounding_box,
         page=form_field.page
     )
     
     return form_field
-
-

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List, Dict, Optional, Any
 from enum import Enum
 
 
@@ -43,7 +43,7 @@ class PackageStatus(Enum):
     preprocessing = "Preprocessing"
     detecting = "Detecting Form Boxes with YOLO"
     analyzing = "Analyzing Form Boxes With GPT4o"
-    creating = "Creating Form with GPT4o"
+    dedupe = "Deduplicating Form Fields"
     complete = "Complete"
 
 class FormFieldType(Enum):
@@ -60,6 +60,7 @@ class FormField(BaseModel):
     form_field_type: FormFieldType
     bounding_box: List[int]
     page: int
+    mapping: Optional[List[int]] = None
 
 class FilledOutPackage(BaseModel):
     id: str
@@ -73,7 +74,9 @@ class Package(BaseModel):
     original_pdf_id: str
     original_image_ids: List[str] # In order of pages
     images_with_boxes_ids: List[str]
+    typeform_json_schema: Dict[str, Any]
     form_fields: List[FormField]
+    final_form: List[FormField]
     filled_out_packages: List[str]
     typeform_url: str
 

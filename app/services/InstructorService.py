@@ -20,12 +20,12 @@ class InstructorService:
         return cls._instance
 
 
-    async def completion(
+    async def completion_with_image_path(
         self,
         prompt: str,
         image_path: str,
         instructor_model: Type[BaseModel],
-        max_retries: int = 8,
+        max_retries: int = 5,
     ) -> Type[BaseModel]:
         """
         Most of you are likely familiar with tool calling with GPT4.
@@ -87,7 +87,7 @@ class InstructorService:
         prompt: str,
         image_base64: str,
         instructor_model: Type[BaseModel],
-        max_retries: int = 8,
+        max_retries: int = 5,
     ) -> Type[BaseModel]:
         messages = [
             {"role": "user", 
@@ -110,6 +110,33 @@ class InstructorService:
         task = self.aclient.chat.completions.create(
             model="gpt-4o",
             messages=messages,
+            response_model=instructor_model,
+            temperature=0.0,
+            seed=69,
+            max_retries=max_retries,
+        )
+
+        model = await task
+        logging.info(f"Received completion from the model:\n{str(model)}")
+        return model
+
+    async def completion(
+        self,
+        prompt: str,
+        instructor_model: Type[BaseModel],
+        max_retries: int = 5,
+    ) -> Type[BaseModel]:
+        
+        logging.info(f"Sending message to the model:\n{prompt}")
+
+        task = self.aclient.chat.completions.create(
+            model="gpt-4-1106-preview",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
             response_model=instructor_model,
             temperature=0.0,
             seed=69,

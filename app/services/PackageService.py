@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Tuple
 from app.utils import create_uuid
 import cv2
 import numpy as np
@@ -29,6 +29,8 @@ class PackageService:
             original_image_ids=[],
             images_with_boxes_ids=[],
             form_fields=[],
+            final_form=[],
+            typeform_json_schema={},
             filled_out_packages=[],
             typeform_url=""
         )
@@ -74,7 +76,7 @@ class PackageService:
         return package
 
     @classmethod
-    async def get_image_with_boxes_for_each_form_field(cls, package: Package) -> List[str, FormField]:
+    async def get_image_with_boxes_for_each_form_field(cls, package: Package) -> List[Tuple[str, FormField]]:
         """
         Get the image with box as base64 string for each form field
         """
