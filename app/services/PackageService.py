@@ -118,12 +118,16 @@ class PackageService:
         existing_filled_out_packages = package.filled_out_packages
         existing_filled_out_package_ids = [filled_out_package.id for filled_out_package in existing_filled_out_packages]
         all_typeform_responses: List[TypeformResponse] = typeformService.get_all_responses(package.typeform_id)
+        logging.info(f'All typeform responses: {all_typeform_responses}')
         
+        print()
         for typeform_response in all_typeform_responses:
             if typeform_response.id not in existing_filled_out_package_ids:
+                logging.info(f'Creating filled out package for typeform response: {typeform_response.id}')
                 filled_out_package: FilledOutPackage = PdfService.create_filled_out_package(package, typeform_response)
                 existing_filled_out_packages.append(filled_out_package)
-
+        print()
+        
         package.filled_out_packages = existing_filled_out_packages
         PackageDao.upsert(package)
         return package
