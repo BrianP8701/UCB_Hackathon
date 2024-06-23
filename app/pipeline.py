@@ -14,7 +14,7 @@ async def begin_pipeline_processing(package: Package):
     package = await run_yolo_stage(package)
     package = await run_description_stage(package)
     package = await run_dedupe_stage(package)
-    package = await run_create_stage(package)
+    # package = await run_create_stage(package)
 
     package.status = PackageStatus.complete
     PackageDao.upsert(package)

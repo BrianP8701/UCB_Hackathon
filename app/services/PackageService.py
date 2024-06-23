@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import base64
 import logging
+import copy
 
 from app.dao.FileDao import FileDao
 from app.types import PackageStatus, Package, FormField, TypeformResponse, FilledOutPackage
@@ -56,10 +57,10 @@ class PackageService:
         return package
 
     @classmethod
-    def draw_bounding_boxes_on_image(cls, image: np.ndarray, bounding_boxes: List[List[int]]) -> np.ndarray:
+    def draw_bounding_boxes_on_image(cls, image: np.ndarray, bounding_boxes: List[List[int]], thickness=3) -> np.ndarray:
         for bounding_box in bounding_boxes:
             if len(bounding_box) == 4:
-                cv2.rectangle(image, (bounding_box[0], bounding_box[1]), (bounding_box[2], bounding_box[3]), (255, 0, 0), 3)
+                cv2.rectangle(image, (bounding_box[0], bounding_box[1]), (bounding_box[2], bounding_box[3]), (255, 0, 0), thickness)
         return image
 
     @classmethod
@@ -97,13 +98,14 @@ class PackageService:
         for form_field in form_fields:
             page = form_field.page
             bounding_box = form_field.bounding_box
-            image_with_box = images[page]
-            image_with_box = cls.draw_bounding_boxes_on_image(image_with_box, [bounding_box])
+            image_with_box = copy.deepcopy(images[page])  # Deep copy the image
+            image_with_box = cls.draw_bounding_boxes_on_image(image_with_box, [bounding_box], thickness=5)
             _, buffer = cv2.imencode('.jpeg', image_with_box)
             image_base64 = base64.b64encode(buffer).decode('utf-8')
             result.append((image_base64, form_field))
 
         return result
+
 
     @classmethod
     async def get_package(cls, package_id: str) -> Package:
@@ -118,12 +120,16 @@ class PackageService:
         existing_filled_out_packages = package.filled_out_packages
         existing_filled_out_package_ids = [filled_out_package.id for filled_out_package in existing_filled_out_packages]
         all_typeform_responses: List[TypeformResponse] = typeformService.get_all_responses(package.typeform_id)
+        logging.info(f'All typeform responses: {all_typeform_responses}')
         
+        print()
         for typeform_response in all_typeform_responses:
             if typeform_response.id not in existing_filled_out_package_ids:
+                logging.info(f'Creating filled out package for typeform response: {typeform_response.id}')
                 filled_out_package: FilledOutPackage = PdfService.create_filled_out_package(package, typeform_response)
                 existing_filled_out_packages.append(filled_out_package)
-
+        print()
+        
         package.filled_out_packages = existing_filled_out_packages
         PackageDao.upsert(package)
         return package

@@ -5,6 +5,7 @@ from app.services.PackageService import PackageService
 import asyncio
 
 from pydantic import Field
+from app.dao.FileDao import FileDao
 
 from app.services.InstructorService import InstructorService
 
@@ -31,19 +32,20 @@ async def run_description_stage(package: Package):
     PackageDao.upsert(package)
     
     base64_images_with_boxes_and_form_fields: List[Tuple[str, FormField]] = await PackageService.get_image_with_boxes_for_each_form_field(package)
+    FileDao.create_files_from_base64(base64_images=[image for image, _ in base64_images_with_boxes_and_form_fields], extension='.jpeg', identifier='description_boxes')
     
-    # Process in batches of 20
-    batch_size = 20
-    described_form_fields = []
+    # # Process in batches of 20
+    # batch_size = 20
+    # described_form_fields = []
     
-    for i in range(0, len(base64_images_with_boxes_and_form_fields), batch_size):
-        batch = base64_images_with_boxes_and_form_fields[i:i + batch_size]
-        tasks = [extract_description_from_image(image_base64, form_field) for image_base64, form_field in batch]
-        results = await asyncio.gather(*tasks)
-        described_form_fields.extend(results)
+    # for i in range(0, len(base64_images_with_boxes_and_form_fields), batch_size):
+    #     batch = base64_images_with_boxes_and_form_fields[i:i + batch_size]
+    #     tasks = [extract_description_from_image(image_base64, form_field) for image_base64, form_field in batch]
+    #     results = await asyncio.gather(*tasks)
+    #     described_form_fields.extend(results)
     
-    package.form_fields = described_form_fields
-    PackageDao.upsert(package)
+    # package.form_fields = described_form_fields
+    # PackageDao.upsert(package)
     return package
 
 
@@ -52,7 +54,7 @@ async def extract_description_from_image(image_base64: str, form_field: FormFiel
     Extract the description from the image
     """
     description = await instructor.completion_with_base64_image_string(
-        'You are helping to label a document form. You need to look at the image and using context from the entire page, '
+        'You are helping to label the form field with the blue box drawn around it. You need to look at the image and using context, '
         'determine the name and description of the form field. You also need to determine the type of the form field, it can be '
         'text, date, checkbox, or signature.',
         image_base64,

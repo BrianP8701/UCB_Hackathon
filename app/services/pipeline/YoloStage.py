@@ -6,8 +6,6 @@ from app.dao.PackageDao import PackageDao
 from app.services.PackageService import PackageService
 from app.services.PdfService import PdfService
 
-import logging
-
 async def run_yolo_stage(package: Package):
     """
     Convert all files to images.

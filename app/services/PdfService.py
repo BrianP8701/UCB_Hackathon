@@ -248,15 +248,17 @@ class PdfService:
             corresponding_form_fields = [form_fields[i] for i in current_final_form_field.mapping]
 
             if answer['type'] == 'short_text':
+                logging.info(f'{answer} in short text')
                 content = answer['text']
             elif answer['type'] == 'text':
-                content = answer['text']
+                if answer['field']['ref'] == 'email':
+                    email = answer['text']
+                else:
+                    content = answer['text']
             elif answer['type'] == 'boolean':
                 content = answer['boolean']
             elif answer['type'] == 'date':
                 content = datetime.strptime(answer['date'], '%Y-%m-%dT%H:%M:%S.%fZ').strftime('%b, %d, %Y')
-            elif answer['type'] == 'email':
-                email = answer['email']
             else:
                 logging.info(f'{answer}')
                 logging.info(f"Unknown answer type: {answer['type']}")
@@ -278,7 +280,7 @@ class PdfService:
         file_ids = FileDao.create_files([filled_out_pdf], '.pdf', 'filled_out_pdf')
         logging.info(f'file_ids: {file_ids}')
         return FilledOutPackage(
-            id=file_ids[0],
+            id=typeform_response.id,
             email=email
         )
         

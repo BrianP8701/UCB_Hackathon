@@ -1,3 +1,4 @@
 data/
 best.pt
 .env
+app.log
