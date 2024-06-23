@@ -18,13 +18,12 @@ class YoloService:
 
         return [[int(x) for x in box] for box in boxes]
 
-    def export_raw_weights_to_onnx(path_to_model: str):
+    @classmethod
+    def export_raw_weights_to_onnx(cls, path_to_model: str):
         model = YOLO(path_to_model) 
         model.export(format="onnx")
 
 
 # Example of usage
 if __name__ == "__main__":
-    yolo_service = YoloService()
-    box = yolo_service.predict("/Users/brianprzezdziecki/Code/UCB_Hackathon/data/raw/jpgs/random/caaraz3-pdf_0.jpeg")
-    print(box)
+    YoloService.export_raw_weights_to_onnx("/Users/brianprzezdziecki/Code/UCB_Hackathon/best.pt")
