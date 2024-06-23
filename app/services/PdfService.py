@@ -15,7 +15,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 from app.utils import get_path_from_file_id
-from app.types import Package, TypeformResponse, FilledOutPackage
+from app.types import Package, TypeformResponse, FilledOutPackage, FormFieldType
 from app.dao.FileDao import FileDao
 
 
@@ -63,7 +63,7 @@ class PdfService:
         if not file_path.endswith('.pdf'):
             raise ValueError(f"File {file_path} is not a PDF.")
 
-        images = convert_from_path(get_path_from_file_id(file_path), dpi=300, output_folder=None, fmt='jpeg')
+        images = convert_from_path(file_path, dpi=300, output_folder=None, fmt='jpeg')
         image_bytes = []
         for image in images:
             img_byte_arr = io.BytesIO()
@@ -94,7 +94,6 @@ class PdfService:
             try:
                 images = cls.convert_pdf_to_images(pdf_path)
                 for i, image in enumerate(images):
-                    print(f"Saving image {i} from {pdf_path}")
                     image_path = os.path.join(output_folder, f"{os.path.basename(pdf_path).replace('.', '-')}_{i}.jpeg")
                     image.save(image_path)
             except Exception as e:
@@ -145,18 +144,27 @@ class PdfService:
             count += 1
 
     @classmethod
-    def get_form_fields_and_rectangles(cls, pdf_path: str) -> Tuple[int, List]:
+    def get_form_fields_and_rectangles(cls, pdf_path: str) -> Tuple[int, List[List[Tuple[Tuple[int, int, int, int], FormFieldType]]]]:
         """
         Get the form fields and corresponding rectangles from a PDF file.
+        
+        Returns
         """
         doc = fitz.open(pdf_path)
-        form_fields = []
+        form_fields_per_page = [[] for _ in range(len(doc))]
 
         for page in doc:
             for field in page.widgets():
-                form_fields.append(field.rect)
+                rect = [int(field.rect[0]*4.155), int(field.rect[1]*4.155), int(field.rect[2]*4.155), int(field.rect[3]*4.155)]
+                field_type_int = field.field_type
+                if field_type_int == 2:
+                    field_type = FormFieldType.checkbox
+                elif field_type_int == 7:
+                    field_type = FormFieldType.text
+                form_fields_per_page[page.number].append((rect, field_type))
 
-        return len(form_fields), form_fields
+        total_items = sum(len(fields) for fields in form_fields_per_page)
+        return total_items, form_fields_per_page
 
     @classmethod
     def count_files_in_folder(cls, folder_path: str) -> int:
@@ -322,3 +330,9 @@ class PdfService:
         output_stream = io.BytesIO()
         doc.save(output_stream)
         return output_stream.getvalue()
+
+
+if __name__ == "__main__":
+    pdf_path = 'data/raw/pdfs/irs_forms/f433aois.pdf'
+    total_count, form_fields = PdfService.get_form_fields_and_rectangles(pdf_path)
+    print(form_fields)

@@ -26,4 +26,17 @@ class YoloService:
 
 # Example of usage
 if __name__ == "__main__":
-    YoloService.export_raw_weights_to_onnx("/Users/brianprzezdziecki/Code/UCB_Hackathon/best.pt")
+    from app.services.PdfService import PdfService
+    from app.services.PackageService import PackageService
+    pdfService = PdfService()
+    packageService = PackageService()
+    # YoloService.export_raw_weights_to_onnx("/Users/brianprzezdziecki/Code/UCB_Hackathon/best.pt")
+    yoloService = YoloService()
+    preds = yoloService.predict("data/raw/jpgs/irs_forms/f433aois-pdf_6.jpeg")
+    print(preds)
+    img = cv2.imread("data/raw/jpgs/irs_forms/f433aois-pdf_6.jpeg")
+    img = packageService.draw_bounding_boxes_on_image(img, preds)
+    print(type(img))
+    cv2.imshow("Image", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()

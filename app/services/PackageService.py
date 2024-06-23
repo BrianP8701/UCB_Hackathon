@@ -49,14 +49,14 @@ class PackageService:
         """
         Creates images from pdf and saves them to storage
         """
-        images = PdfService.convert_pdf_to_images(package.original_pdf_id)
+        images = PdfService.convert_pdf_to_images(get_path_from_file_id(package.original_pdf_id))
         image_ids = FileDao.create_files(images, '.jpeg', 'original_image')
         package.original_image_ids = image_ids
         PackageDao.upsert(package)
         return package
 
     @classmethod
-    async def draw_bounding_boxes_on_image(cls, image: np.ndarray, bounding_boxes: List[List[int]]) -> np.ndarray:
+    def draw_bounding_boxes_on_image(cls, image: np.ndarray, bounding_boxes: List[List[int]]) -> np.ndarray:
         for bounding_box in bounding_boxes:
             if len(bounding_box) == 4:
                 cv2.rectangle(image, (bounding_box[0], bounding_box[1]), (bounding_box[2], bounding_box[3]), (255, 0, 0), 3)
@@ -71,7 +71,7 @@ class PackageService:
         images = [cv2.imread(image_path) for image_path in original_image_paths]
 
         for field_form in package.form_fields:
-            images[field_form.page] = await cls.draw_bounding_boxes_on_image(images[field_form.page], [field_form.bounding_box])
+            images[field_form.page] = cls.draw_bounding_boxes_on_image(images[field_form.page], [field_form.bounding_box])
 
         imagesWithBoxesIds = FileDao.create_files(images, '.jpeg', 'image_with_boxes')
         image_bytes = [cv2.imencode('.jpeg', image)[1] for image in images]
@@ -98,7 +98,7 @@ class PackageService:
             page = form_field.page
             bounding_box = form_field.bounding_box
             image_with_box = images[page]
-            image_with_box = await cls.draw_bounding_boxes_on_image(image_with_box, [bounding_box])
+            image_with_box = cls.draw_bounding_boxes_on_image(image_with_box, [bounding_box])
             _, buffer = cv2.imencode('.jpeg', image_with_box)
             image_base64 = base64.b64encode(buffer).decode('utf-8')
             result.append((image_base64, form_field))
