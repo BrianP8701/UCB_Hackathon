@@ -12,7 +12,6 @@ class FePackageRow(BaseModel):
     packageStatus: str
 
 class FeFilledOutPackage(BaseModel):
-    email: str
     pdfPath: str
 
 class FeFormField(BaseModel):
@@ -26,9 +25,9 @@ class FePackage(BaseModel):
     packageStatus: str
     originalPdfPath: str
     imagesWithBoxesPaths: List[str]
-    formFields: List[FeFormField]
     filledOutPackages: List[FeFilledOutPackage]
     typeformUrl: str
+    typeformId: str
 
 
 
@@ -44,6 +43,7 @@ class PackageStatus(Enum):
     detecting = "Detecting Form Boxes with YOLO"
     analyzing = "Analyzing Form Boxes With GPT4o"
     dedupe = "Deduplicating Form Fields"
+    create = "Creating Typeform Form"
     complete = "Complete"
 
 class FormFieldType(Enum):
@@ -58,14 +58,17 @@ class FormField(BaseModel):
     name: str
     description: str
     form_field_type: FormFieldType
-    bounding_box: List[int]
-    page: int
-    mapping: Optional[List[int]] = None
+    bounding_box: List[int] = []
+    page: int = -1
+    mapping: List[int] = []
 
 class FilledOutPackage(BaseModel):
     id: str
     email: str
-    file_ids: List[str]
+
+class TypeformResponse(BaseModel):
+    id: str
+    answers: List[Dict[str, Any]]
 
 class Package(BaseModel):
     id: str
@@ -77,10 +80,6 @@ class Package(BaseModel):
     typeform_json_schema: Dict[str, Any]
     form_fields: List[FormField]
     final_form: List[FormField]
-    filled_out_packages: List[str]
+    filled_out_packages: List[FilledOutPackage]
     typeform_url: str
-
-class File(BaseModel):
-    id: str
-    name: str
-    content: bytes
+    typeform_id: str

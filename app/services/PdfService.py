@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Union
 from pdf2image import convert_from_path
 from PyPDF2 import PdfReader, PdfWriter
 from os.path import isfile
@@ -8,8 +8,41 @@ import fitz
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import shutil
 import io
+from pydantic import BaseModel
+import datetime
+import logging
+from PIL import Image, ImageDraw, ImageFont
+
 
 from app.utils import get_path_from_file_id
+from app.types import Package, TypeformResponse, FilledOutPackage
+from app.dao.FileDao import FileDao
+
+
+class PdfFormField(BaseModel):
+    content: Union[str, bool]
+    rect: Tuple[int, int, int, int]
+    page: int
+    
+logging.basicConfig(
+    filename='app.log',  # Log file name
+    level=logging.INFO,  # Log level
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
+    datefmt='%Y-%m-%d %H:%M:%S'  # Date format
+)
+
+class CustomFileHandler(logging.FileHandler):
+    def emit(self, record):
+        super().emit(record)
+        self.stream.write('\n\n')  # Add two new lines
+        self.flush()
+
+# Replace the default handler with the custom handler
+for handler in logging.getLogger().handlers:
+    if isinstance(handler, logging.FileHandler):
+        logging.getLogger().removeHandler(handler)
+
+logging.getLogger().addHandler(CustomFileHandler('app.log'))
 
 class PdfService:
     
@@ -187,4 +220,105 @@ class PdfService:
         
         output_stream = io.BytesIO()
         pdf_writer.write(output_stream)
+        return output_stream.getvalue()
+
+
+
+    @classmethod
+    def create_filled_out_package(cls, package: Package, typeform_response: TypeformResponse) -> FilledOutPackage:
+        """
+        Returns id of filled out pdf
+        """
+        form_fields = package.form_fields
+        final_form = package.final_form
+        pdf_form_fields: List[PdfFormField] = []
+        email = ''
+        
+        for answer in typeform_response.answers:
+            final_form_id = answer['field']['ref']
+            current_final_form_field = next((field for field in final_form if field.id == final_form_id), None)
+            corresponding_form_fields = [form_fields[i] for i in current_final_form_field.mapping]
+
+            if answer['type'] == 'short_text':
+                content = answer['text']
+            elif answer['type'] == 'text':
+                content = answer['text']
+            elif answer['type'] == 'boolean':
+                content = answer['boolean']
+            elif answer['type'] == 'date':
+                content = datetime.strptime(answer['date'], '%Y-%m-%dT%H:%M:%S.%fZ').strftime('%b, %d, %Y')
+            elif answer['type'] == 'email':
+                email = answer['email']
+            else:
+                logging.info(f'{answer}')
+                logging.info(f"Unknown answer type: {answer['type']}")
+                
+                raise ValueError(f"Unknown answer type: {answer['type']}")
+            
+            for form_field in corresponding_form_fields:
+                bounding_box = form_field.bounding_box
+                if bounding_box:
+                    pdf_form_fields.append(PdfFormField(
+                        content=content, rect=bounding_box, page=form_field.page
+                    )
+                )
+        
+        filled_out_pdf_path = get_path_from_file_id(package.original_pdf_id)
+        filled_out_pdf = cls.fill_pdf_form(filled_out_pdf_path, pdf_form_fields)
+  
+
+        file_ids = FileDao.create_files([filled_out_pdf], '.pdf', 'filled_out_pdf')
+        logging.info(f'file_ids: {file_ids}')
+        return FilledOutPackage(
+            id=file_ids[0],
+            email=email
+        )
+        
+        
+    @classmethod
+    def fill_pdf_form(cls, pdf_path: str, form_fields: List[PdfFormField]) -> bytes:
+        """
+        Fill out a PDF form with the given form fields.
+        """
+        logging.info(f'all form fields: {form_fields}')
+        logging.info(f'pdf_path: {pdf_path}')
+        doc = fitz.open(pdf_path)
+        
+        for idx, field in enumerate(form_fields):
+            logging.info(f'field to fill: {field}')
+            page = doc[field.page]
+            rect = fitz.Rect(x0=field.rect[0], y0=field.rect[1], x1=field.rect[2], y1=field.rect[3])
+            logging.info(f'Created rect: {rect}')
+            
+            widget = fitz.Widget()
+            widget.rect = rect
+            widget.field_name = f'field_{idx}'
+            widget.field_value = field.content
+            widget.text_font = "Helv"
+            widget.text_fontsize = 30
+            widget.border_color = (0, 0, 0)
+            widget.border_width = 1
+            widget.fill_color = (1, 1, 1)
+            widget.text_color = (0, 0, 0)
+            
+            if isinstance(field.content, str):
+                widget.field_type = fitz.PDF_WIDGET_TYPE_TEXT
+                logging.info(f'Inserting text: {field.content} at {rect}')
+            elif isinstance(field.content, bool):
+                widget.field_type = fitz.PDF_WIDGET_TYPE_CHECKBOX
+                widget.field_value = widget.on_state() if field.content else False
+                logging.info(f'Inserting checkbox: {field.content} at {rect}')
+            
+            page.add_widget(widget)
+            widget.update()
+            logging.info(f'Widget added and updated at {rect}')
+
+        # Save the document to a file for verification
+        output_path = "filled_out_pdf_temp.pdf"
+        doc.save(output_path)
+        logging.info(f'PDF saved successfully to {output_path}')
+
+        # Save the document to bytes
+        output_stream = io.BytesIO()
+        doc.save(output_stream)
         return output_stream.getvalue()

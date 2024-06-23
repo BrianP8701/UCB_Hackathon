@@ -31,32 +31,22 @@ for handler in logging.getLogger().handlers:
 logging.getLogger().addHandler(CustomFileHandler('app.log'))
 
 
-class CreatePackageRequest(BaseModel):
-    files: List[bytes]
-    name: str
-
 
 @app.post("/createPackage")
 async def create_package(
     background_tasks: BackgroundTasks,
     name: str = Form(...),
     files: List[UploadFile] = File(...)
-    ) -> FePackage:
+) -> FePackage:
     decoded_files = [await file.read() for file in files]
+
     package: Package = await PackageService.create_package(name, decoded_files)
 
     background_tasks.add_task(begin_pipeline_processing, package)
 
     return package_to_fe_package(package)
 
-@app.post("/createPackage")
-async def create_package(request: CreatePackageRequest, background_tasks: BackgroundTasks) -> FePackage:
-    decoded_files = [base64.b64decode(file) for file in request.files]  # Decode base64 strings to bytes
-    package: Package = await PackageService.create_package(request.name, decoded_files)
 
-    background_tasks.add_task(begin_pipeline_processing, package)
-
-    return package_to_fe_package(package)
 
 @app.get("/getPackagesRows")
 async def get_packages_rows() -> List[FePackageRow]:
@@ -69,14 +59,10 @@ class GetPackageRequest(BaseModel):
 
 @app.get("/getPackage")
 async def get_package(packageId: str) -> FePackage:
-    package: Package = PackageDao.get_package(packageId)
-    logging.info(f'package: {package}')
+    package: Package = await PackageService.get_package(packageId)
     return package_to_fe_package(package)
 
 @app.get("/getPackageStatus")
 async def get_package_status(packageId: str) -> str:
     package: Package = PackageDao.get_package(packageId)
-    logging.info(f'package: {package}')
-    logging.info(f'package.status: {package.status}')
-    logging.info(f'package.status.value: {package.status.value}')
     return package.status.value

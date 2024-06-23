@@ -7,14 +7,7 @@ def package_to_fe_package(package: Package) -> FePackage:
     for filled_out_package in package.filled_out_packages:
         filledOutPackages.append(FeFilledOutPackage(
             email=filled_out_package.email,
-            pdfPath=get_path_from_file_id(filled_out_package.pdf_id)
-        ))
-    formFields = []
-    for field in package.form_fields:
-        formFields.append(FeFormField(
-            name=field.name,
-            description=field.description,
-            formFieldType=field.form_field_type.value
+            pdfPath=get_path_from_file_id(filled_out_package.id)
         ))
     return FePackage(
         packageId=package.id,
@@ -22,9 +15,9 @@ def package_to_fe_package(package: Package) -> FePackage:
         packageStatus=package.status.value,
         originalPdfPath=get_path_from_file_id(package.original_pdf_id),
         imagesWithBoxesPaths=[get_path_from_file_id(image_id) for image_id in package.images_with_boxes_ids],
-        formFields=formFields,
         filledOutPackages=filledOutPackages,
-        typeformUrl=package.typeform_url
+        typeformUrl=package.typeform_url,
+        typeformId=package.typeform_id
     )
 
 

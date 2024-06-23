@@ -67,7 +67,6 @@ class InstructorService:
             ]}
         ]
 
-        logging.info(f"Sending messages to the model:\n{messages}")
 
         task = self.aclient.chat.completions.create(
             model="gpt-4o",
@@ -104,8 +103,6 @@ class InstructorService:
                 }
             ]}
         ]
-
-        logging.info(f"Sending messages to the model:\n{messages}")
 
         task = self.aclient.chat.completions.create(
             model="gpt-4o",

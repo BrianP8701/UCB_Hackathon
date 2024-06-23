@@ -6,11 +6,15 @@ import base64
 import logging
 
 from app.dao.FileDao import FileDao
-from app.types import PackageStatus, Package, FormField
+from app.types import PackageStatus, Package, FormField, TypeformResponse, FilledOutPackage
 from app.dao.PackageDao import PackageDao
 from app.services.PdfService import PdfService
 from app.database import Storage
 from app.utils import get_path_from_file_id, create_uuid
+from app.services.TypeformService import TypeformService
+from app.formatters import package_to_fe_package
+
+typeformService = TypeformService()
 
 class PackageService:
     @classmethod
@@ -32,7 +36,8 @@ class PackageService:
             final_form=[],
             typeform_json_schema={},
             filled_out_packages=[],
-            typeform_url=""
+            typeform_url="",
+            typeform_id=''
         )
 
         PackageDao.upsert(package)
@@ -99,3 +104,26 @@ class PackageService:
             result.append((image_base64, form_field))
 
         return result
+
+    @classmethod
+    async def get_package(cls, package_id: str) -> Package:
+        package = PackageDao.get_package(package_id)
+        package = await cls.update_filled_out_packages(package)
+        
+        
+        return package
+
+    @classmethod
+    async def update_filled_out_packages(cls, package: Package) -> Package:
+        existing_filled_out_packages = package.filled_out_packages
+        existing_filled_out_package_ids = [filled_out_package.id for filled_out_package in existing_filled_out_packages]
+        all_typeform_responses: List[TypeformResponse] = typeformService.get_all_responses(package.typeform_id)
+        
+        for typeform_response in all_typeform_responses:
+            if typeform_response.id not in existing_filled_out_package_ids:
+                filled_out_package: FilledOutPackage = PdfService.create_filled_out_package(package, typeform_response)
+                existing_filled_out_packages.append(filled_out_package)
+
+        package.filled_out_packages = existing_filled_out_packages
+        PackageDao.upsert(package)
+        return package

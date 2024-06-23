@@ -24,19 +24,18 @@ async def run_yolo_stage(package: Package):
     form_fields: List[FormField] = []
     for i, image_path in enumerate(image_paths):
         detected_boxes: List[List[str]] = yolo_service.predict(image_path)
-        logging.info(f'detected_boxes: {detected_boxes}')
         for box in detected_boxes:
-            form_field = FormField(
-                    id=create_uuid('form_field'),
-                    name="",
-                    description="",
-                    form_field_type=FormFieldType.undetermined,
-                    bounding_box=box,
-                    page=i
-                )
-            form_fields.append(form_field)
+            if box:
+                form_field = FormField(
+                        id=create_uuid('form_field'),
+                        name="",
+                        description="",
+                        form_field_type=FormFieldType.undetermined,
+                        bounding_box=box,
+                        page=i
+                    )
+                form_fields.append(form_field)
 
-    logging.info(f'form_fields: {form_fields}')
     package.form_fields = form_fields
     PackageDao.upsert(package)
 
