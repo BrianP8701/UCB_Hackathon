@@ -32,20 +32,19 @@ async def run_description_stage(package: Package):
     PackageDao.upsert(package)
     
     base64_images_with_boxes_and_form_fields: List[Tuple[str, FormField]] = await PackageService.get_image_with_boxes_for_each_form_field(package)
-    FileDao.create_files_from_base64(base64_images=[image for image, _ in base64_images_with_boxes_and_form_fields], extension='.jpeg', identifier='description_boxes')
     
-    # # Process in batches of 20
-    # batch_size = 20
-    # described_form_fields = []
+    # Process in batches of 20
+    batch_size = 20
+    described_form_fields = []
     
-    # for i in range(0, len(base64_images_with_boxes_and_form_fields), batch_size):
-    #     batch = base64_images_with_boxes_and_form_fields[i:i + batch_size]
-    #     tasks = [extract_description_from_image(image_base64, form_field) for image_base64, form_field in batch]
-    #     results = await asyncio.gather(*tasks)
-    #     described_form_fields.extend(results)
+    for i in range(0, len(base64_images_with_boxes_and_form_fields), batch_size):
+        batch = base64_images_with_boxes_and_form_fields[i:i + batch_size]
+        tasks = [extract_description_from_image(image_base64, form_field) for image_base64, form_field in batch]
+        results = await asyncio.gather(*tasks)
+        described_form_fields.extend(results)
     
-    # package.form_fields = described_form_fields
-    # PackageDao.upsert(package)
+    package.form_fields = described_form_fields
+    PackageDao.upsert(package)
     return package
 
 
