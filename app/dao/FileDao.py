@@ -6,10 +6,10 @@ storage = Storage()
 
 class FileDao:
     @classmethod
-    def create_files(cls, file_bytes: List[bytes], extension: str) -> List[str]:
+    def create_files(cls, file_bytes: List[bytes], extension: str, identifier: str) -> List[str]:
         file_ids = []
         for file in file_bytes:
-            file_id = create_uuid() + extension
+            file_id = create_uuid(identifier) + extension
             file_ids.append(file_id)
             storage.create(file_id, file)
         return file_ids

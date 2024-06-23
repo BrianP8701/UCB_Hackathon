@@ -5,6 +5,8 @@ from app.utils import create_uuid
 from app.dao.PackageDao import PackageDao
 from app.services.PackageService import PackageService
 
+import logging
+
 async def run_yolo_stage(package: Package):
     """
     Convert all files to images.
@@ -18,12 +20,14 @@ async def run_yolo_stage(package: Package):
     image_paths = [get_path_from_file_id(image_id) for image_id in image_ids]
     yolo_service = YoloService()
 
+
     form_fields: List[FormField] = []
     for i, image_path in enumerate(image_paths):
         detected_boxes: List[List[str]] = yolo_service.predict(image_path)
+        logging.info(f'detected_boxes: {detected_boxes}')
         for box in detected_boxes:
             form_field = FormField(
-                    id=create_uuid(),
+                    id=create_uuid('form_field'),
                     name="",
                     description="",
                     form_field_type=FormFieldType.undetermined,
@@ -32,6 +36,7 @@ async def run_yolo_stage(package: Package):
                 )
             form_fields.append(form_field)
 
+    logging.info(f'form_fields: {form_fields}')
     package.form_fields = form_fields
     PackageDao.upsert(package)
 

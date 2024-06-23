@@ -18,10 +18,10 @@ class PackageService:
         Merges all files into one pdf and saves it. Creates pdf object with 
         """
         file = PdfService.merge_pdfs(file_bytes)
-        file_ids = FileDao.create_files([file], '.pdf')
+        file_ids = FileDao.create_files([file], '.pdf', 'original_pdf')
 
         package = Package(
-            id=create_uuid(),
+            id=create_uuid('package'),
             name=name,
             status=PackageStatus.preprocessing,
             original_pdf_id=file_ids[0],
@@ -42,7 +42,7 @@ class PackageService:
         Creates images from pdf and saves them to storage
         """
         images = PdfService.convert_pdf_to_images(package.original_pdf_id)
-        image_ids = FileDao.create_files(images, '.jpeg')
+        image_ids = FileDao.create_files(images, '.jpeg', 'original_image')
         package.original_image_ids = image_ids
         PackageDao.upsert(package)
         return package
@@ -51,9 +51,7 @@ class PackageService:
     async def draw_bounding_boxes_on_image(cls, image: np.ndarray, bounding_boxes: List[List[int]]) -> np.ndarray:
         for bounding_box in bounding_boxes:
             if len(bounding_box) == 4:
-                logging.info(f'bounding box: {bounding_box}')
                 cv2.rectangle(image, (bounding_box[0], bounding_box[1]), (bounding_box[2], bounding_box[3]), (255, 0, 0), 3)
-        logging.info(f'type of image: {type(image)}')
         return image
 
     @classmethod
@@ -67,8 +65,7 @@ class PackageService:
         for field_form in package.form_fields:
             images[field_form.page] = await cls.draw_bounding_boxes_on_image(images[field_form.page], [field_form.bounding_box])
 
-        FileDao.create_files(images, '.jpeg')
-        imagesWithBoxesIds = [create_uuid() + ".jpeg" for _ in range(len(images))]
+        imagesWithBoxesIds = FileDao.create_files(images, '.jpeg', 'image_with_boxes')
         image_bytes = [cv2.imencode('.jpeg', image)[1] for image in images]
         image_ids = storage.batch_create(imagesWithBoxesIds, image_bytes)
         package.images_with_boxes_ids = image_ids

@@ -1,107 +1,33 @@
-Boxes: [[     1116.4      937.88      1842.6      1032.1]
- [     266.69      843.68      1052.5      936.33]]
+package: id='packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd' name='Test Package' status=<PackageStatus.detecting: 'Detecting Form Boxes with YOLO'> original_pdf_id='original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf' original_image_ids=['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'] images_with_boxes_ids=['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'] form_fields=[FormField(id='form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)] filled_out_packages=[] typeform_url=''
 
 
-Boxes: [-1, -1, -1, -1]
+package_rows: [{'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'data': {'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf', 'original_image_ids': ['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'], 'images_with_boxes_ids': ['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'], 'form_fields': [{'id': 'form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'data': {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfe4c7b25d-fc70-473a-9f9b-01fa2fed27c0.pdf', 'original_image_ids': ['original_image6d7fb259-7e9b-42f2-a392-eba858f95997.jpeg', 'original_imagee85c6bc1-56bd-4e2e-a66b-f84580bf282e.jpeg'], 'images_with_boxes_ids': ['image_with_boxes8921c9f2-d145-45b8-9cd9-2a0d57f2da84.jpeg', 'image_with_boxes98218734-9b97-408c-b164-6aa30a2ec89b.jpeg'], 'form_fields': [{'id': 'form_fieldde78c2d8-1f8a-4f65-8277-42979ff6de15', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_fieldce04be2b-5dd9-4c88-a1a7-27bc750d9409', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielde253f996-a2dc-48e0-9d05-095a4048ed9a', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'data': {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfca6b3056-ad4f-4aab-8647-19424313e20e.pdf', 'original_image_ids': ['original_image8c329abd-e205-4101-b288-31d016983fc1.jpeg', 'original_imagedd4fb34c-1333-43de-b87c-f0a7b489db2b.jpeg'], 'images_with_boxes_ids': ['image_with_boxes90b5421f-f343-48f2-bae1-5177fc963a82.jpeg', 'image_with_boxesd0e38d04-ca6d-4371-982f-224d1e7eb80b.jpeg'], 'form_fields': [{'id': 'form_field2b87ecf1-0f97-4242-887a-61da8acbef5b', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3e4dc0eb-c836-4c40-84fb-c902182cb9c3', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielda75062fc-93d7-48ad-b8fc-3d7265a9c0e9', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}]
 
 
-storage/f648f3a0-6c26-4a7c-a2d0-a0d3662dbe3c.jpeg
+package: id='packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd' name='Test Package' status=<PackageStatus.detecting: 'Detecting Form Boxes with YOLO'> original_pdf_id='original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf' original_image_ids=['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'] images_with_boxes_ids=['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'] form_fields=[FormField(id='form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)] filled_out_packages=[] typeform_url=''
 
 
-Boxes: [[     1116.4      937.88      1842.6      1032.1]
- [     266.69      843.68      1052.5      936.33]]
+package_rows: [{'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'data': {'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf', 'original_image_ids': ['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'], 'images_with_boxes_ids': ['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'], 'form_fields': [{'id': 'form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'data': {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfe4c7b25d-fc70-473a-9f9b-01fa2fed27c0.pdf', 'original_image_ids': ['original_image6d7fb259-7e9b-42f2-a392-eba858f95997.jpeg', 'original_imagee85c6bc1-56bd-4e2e-a66b-f84580bf282e.jpeg'], 'images_with_boxes_ids': ['image_with_boxes8921c9f2-d145-45b8-9cd9-2a0d57f2da84.jpeg', 'image_with_boxes98218734-9b97-408c-b164-6aa30a2ec89b.jpeg'], 'form_fields': [{'id': 'form_fieldde78c2d8-1f8a-4f65-8277-42979ff6de15', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_fieldce04be2b-5dd9-4c88-a1a7-27bc750d9409', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielde253f996-a2dc-48e0-9d05-095a4048ed9a', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'data': {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfca6b3056-ad4f-4aab-8647-19424313e20e.pdf', 'original_image_ids': ['original_image8c329abd-e205-4101-b288-31d016983fc1.jpeg', 'original_imagedd4fb34c-1333-43de-b87c-f0a7b489db2b.jpeg'], 'images_with_boxes_ids': ['image_with_boxes90b5421f-f343-48f2-bae1-5177fc963a82.jpeg', 'image_with_boxesd0e38d04-ca6d-4371-982f-224d1e7eb80b.jpeg'], 'form_fields': [{'id': 'form_field2b87ecf1-0f97-4242-887a-61da8acbef5b', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3e4dc0eb-c836-4c40-84fb-c902182cb9c3', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielda75062fc-93d7-48ad-b8fc-3d7265a9c0e9', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}]
 
 
-storage/a8b34e72-3c4d-4f02-84c3-a3dd39605cdc.jpeg
+package: id='packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd' name='Test Package' status=<PackageStatus.detecting: 'Detecting Form Boxes with YOLO'> original_pdf_id='original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf' original_image_ids=['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'] images_with_boxes_ids=['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'] form_fields=[FormField(id='form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)] filled_out_packages=[] typeform_url=''
 
 
-storage/728015fa-509a-4ff7-bb0e-94e0150564ec.jpeg
+package_rows: [{'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'data': {'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf', 'original_image_ids': ['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'], 'images_with_boxes_ids': ['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'], 'form_fields': [{'id': 'form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'data': {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfe4c7b25d-fc70-473a-9f9b-01fa2fed27c0.pdf', 'original_image_ids': ['original_image6d7fb259-7e9b-42f2-a392-eba858f95997.jpeg', 'original_imagee85c6bc1-56bd-4e2e-a66b-f84580bf282e.jpeg'], 'images_with_boxes_ids': ['image_with_boxes8921c9f2-d145-45b8-9cd9-2a0d57f2da84.jpeg', 'image_with_boxes98218734-9b97-408c-b164-6aa30a2ec89b.jpeg'], 'form_fields': [{'id': 'form_fieldde78c2d8-1f8a-4f65-8277-42979ff6de15', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_fieldce04be2b-5dd9-4c88-a1a7-27bc750d9409', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielde253f996-a2dc-48e0-9d05-095a4048ed9a', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'data': {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfca6b3056-ad4f-4aab-8647-19424313e20e.pdf', 'original_image_ids': ['original_image8c329abd-e205-4101-b288-31d016983fc1.jpeg', 'original_imagedd4fb34c-1333-43de-b87c-f0a7b489db2b.jpeg'], 'images_with_boxes_ids': ['image_with_boxes90b5421f-f343-48f2-bae1-5177fc963a82.jpeg', 'image_with_boxesd0e38d04-ca6d-4371-982f-224d1e7eb80b.jpeg'], 'form_fields': [{'id': 'form_field2b87ecf1-0f97-4242-887a-61da8acbef5b', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3e4dc0eb-c836-4c40-84fb-c902182cb9c3', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielda75062fc-93d7-48ad-b8fc-3d7265a9c0e9', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}]
 
 
-storage/d430e907-09a8-45e3-9efd-1913db3e1423.jpeg
+package: id='packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd' name='Test Package' status=<PackageStatus.detecting: 'Detecting Form Boxes with YOLO'> original_pdf_id='original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf' original_image_ids=['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'] images_with_boxes_ids=['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'] form_fields=[FormField(id='form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)] filled_out_packages=[] typeform_url=''
 
 
-storage/9aad4925-750d-460f-8139-4d49a9f6bfee.jpeg
+package_rows: [{'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'data': {'id': 'packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf', 'original_image_ids': ['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'], 'images_with_boxes_ids': ['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'], 'form_fields': [{'id': 'form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'data': {'id': 'packagea18f19c6-7991-4930-a05f-73fedf8c0f92', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfe4c7b25d-fc70-473a-9f9b-01fa2fed27c0.pdf', 'original_image_ids': ['original_image6d7fb259-7e9b-42f2-a392-eba858f95997.jpeg', 'original_imagee85c6bc1-56bd-4e2e-a66b-f84580bf282e.jpeg'], 'images_with_boxes_ids': ['image_with_boxes8921c9f2-d145-45b8-9cd9-2a0d57f2da84.jpeg', 'image_with_boxes98218734-9b97-408c-b164-6aa30a2ec89b.jpeg'], 'form_fields': [{'id': 'form_fieldde78c2d8-1f8a-4f65-8277-42979ff6de15', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_fieldce04be2b-5dd9-4c88-a1a7-27bc750d9409', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielde253f996-a2dc-48e0-9d05-095a4048ed9a', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}, {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'data': {'id': 'package41359de9-d9a5-424f-9852-53306cc3ec2a', 'name': 'Test Package', 'status': 'Detecting Form Boxes with YOLO', 'original_pdf_id': 'original_pdfca6b3056-ad4f-4aab-8647-19424313e20e.pdf', 'original_image_ids': ['original_image8c329abd-e205-4101-b288-31d016983fc1.jpeg', 'original_imagedd4fb34c-1333-43de-b87c-f0a7b489db2b.jpeg'], 'images_with_boxes_ids': ['image_with_boxes90b5421f-f343-48f2-bae1-5177fc963a82.jpeg', 'image_with_boxesd0e38d04-ca6d-4371-982f-224d1e7eb80b.jpeg'], 'form_fields': [{'id': 'form_field2b87ecf1-0f97-4242-887a-61da8acbef5b', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [1116, 937, 1842, 1032], 'page': 0}, {'id': 'form_field3e4dc0eb-c836-4c40-84fb-c902182cb9c3', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [266, 843, 1052, 936], 'page': 0}, {'id': 'form_fielda75062fc-93d7-48ad-b8fc-3d7265a9c0e9', 'name': '', 'description': '', 'form_field_type': 'undetermined', 'bounding_box': [], 'page': 1}], 'filled_out_packages': [], 'typeform_url': ''}}]
 
 
-storage/e863e5bf-99f3-4d49-b6be-2aeb9311ef8a.jpeg
+package: id='packagea5f2a5fd-21fe-47ac-a61a-4f2274c9ebbd' name='Test Package' status=<PackageStatus.detecting: 'Detecting Form Boxes with YOLO'> original_pdf_id='original_pdf7eea695d-7800-4d75-bc9d-af0f6bbc72fa.pdf' original_image_ids=['original_image9abcea72-ca33-47e5-b021-b2f59d02e03c.jpeg', 'original_imaged9177bf1-a6fa-4e24-b0d0-298790708b3f.jpeg'] images_with_boxes_ids=['image_with_boxes77c593d8-2da5-41a8-968b-385794630004.jpeg', 'image_with_boxesaf0556dd-12b6-4481-a4dc-27695669a4d3.jpeg'] form_fields=[FormField(id='form_fieldc84ad416-7333-4ba0-ad89-6c49da253347', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='form_field3ee92ce0-7db0-46d9-92a5-15ddfb544aa5', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='form_field9984bc98-47ec-496d-aa79-5b52e906c2a0', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)] filled_out_packages=[] typeform_url=''
 
 
-storage/9171bc89-fbdf-4a5d-82f9-43b92f58b0a2.jpeg
+package.status: PackageStatus.detecting
 
 
-storage/650de095-fb95-4a6a-bfa0-a1121cb91211.jpeg
-
-
-storage/dea6b064-7103-437f-a750-74acaba4627b.jpeg
-
-
-storage/eedeb0ea-2b63-4816-80f9-96b6b81321dd.jpeg
-
-
-type of images: <class 'list'>, <class 'numpy.ndarray'>
-
-
-type of images: <class 'list'>, <class 'numpy.ndarray'>
-
-
-package.form_fields: [FormField(id='64c5e555-860c-4918-a5e1-7ab8fb95f009', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='bc0d7265-647b-4b55-b2f4-f86374be211c', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='1e4e0fc1-1b41-4c1d-833c-709a9c879693', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)]
-
-
-type of images: <class 'list'>, <class 'numpy.ndarray'>
-
-
-package.form_fields: [FormField(id='cdee39f3-f644-44d5-ab26-dd69fd0dcbbf', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='754e5afa-163e-4805-ab2e-7bed522cc09c', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='1d1c097c-fd5d-4b77-a4ca-7a97062fb7e8', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)]
-
-
-bounding box: [1116, 937, 1842, 1032]
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-bounding box: [266, 843, 1052, 936]
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-bounding box: []
-
-
-type of images: <class 'list'>, <class 'numpy.ndarray'>
-
-
-package.form_fields: [FormField(id='bd3c9674-0320-49f8-9d26-75986af4b586', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[1116, 937, 1842, 1032], page=0), FormField(id='77ae71fe-b358-4ccf-8847-ff6980ea988c', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[266, 843, 1052, 936], page=0), FormField(id='7818b8e1-6148-460a-bc2a-8593097c65e7', name='', description='', form_field_type=<FormFieldType.undetermined: 'undetermined'>, bounding_box=[], page=1)]
-
-
-bounding box: [1116, 937, 1842, 1032]
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-bounding box: [266, 843, 1052, 936]
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-bounding box: [1116, 937, 1842, 1032]
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-bounding box: [266, 843, 1052, 936]
-
-
-type of image: <class 'numpy.ndarray'>
-
-
-type of image: <class 'numpy.ndarray'>
+package.status.value: Detecting Form Boxes with YOLO
 
 

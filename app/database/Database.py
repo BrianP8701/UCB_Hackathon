@@ -105,12 +105,10 @@ class Database(AbstractDatabase):
             self.connection.rollback()
             raise e
 
-    def clear_table(self, table_name: str, safety: str) -> None:
-        if safety == "CONFIRM":
-            self.cursor.execute(f"DELETE FROM {table_name}")
-            self.connection.commit()
-        else:
-            raise ValueError("Safety check failed; clear_table operation aborted.")
+    def clear_table(self, table_name: str) -> None:
+        self.cursor.execute(f"DELETE FROM {table_name}")
+        self.connection.commit()
+
 
     def get_all(self, table_name: str) -> list:
         self.cursor.execute(f"SELECT * FROM {table_name}")

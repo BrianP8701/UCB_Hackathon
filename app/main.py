@@ -56,13 +56,13 @@ class GetPackageRequest(BaseModel):
 @app.get("/getPackage")
 async def get_package(packageId: str) -> FePackage:
     package: Package = PackageDao.get_package(packageId)
+    logging.info(f'package: {package}')
     return package_to_fe_package(package)
 
-
-class GetPackageStatusRequest(BaseModel):
-    id: str
-
 @app.get("/getPackageStatus")
-async def get_package_status(request: GetPackageStatusRequest) -> str:
-    package: Package = PackageDao.get_package(request.id)
+async def get_package_status(packageId: str) -> str:
+    package: Package = PackageDao.get_package(packageId)
+    logging.info(f'package: {package}')
+    logging.info(f'package.status: {package.status}')
+    logging.info(f'package.status.value: {package.status.value}')
     return package.status.value
