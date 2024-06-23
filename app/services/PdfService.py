@@ -12,8 +12,6 @@ from pydantic import BaseModel
 from datetime import datetime
 import logging
 
-
-
 from app.utils import get_path_from_file_id
 from app.types import Package, TypeformResponse, FilledOutPackage, FormFieldType
 from app.dao.FileDao import FileDao
