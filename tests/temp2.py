@@ -1,14 +1,23 @@
 import cv2
 import asyncio
+from pydantic import BaseModel, Field
+from typing import List
 
-from app.services.PackageService import PackageService
+from app.services.InstructorService import InstructorService
 
 
+instructor = InstructorService()
 
-image_path = 'storage/3c563012-ec2c-4e60-9197-5c2219512c3d.jpeg'
 
-image = cv2.imread(image_path)
+class Colors(BaseModel):
+    colors: List[str] = Field(..., description="List the most common and main colors in the image")
+    
 
-image = asyncio.run(PackageService.draw_bounding_boxes_on_image(image, [[1116, 937, 1842, 1032]]))
+response = asyncio.run(instructor.completion(
+    "What are the main colors in this image", 
+    "/Users/brianprzezdziecki/Desktop/Things I Use/Dreamscape.jpeg",  # Moved image_path here
+    Colors  # Moved instructor_model here
+    )
+)
 
-print(type(image))
+print(response)

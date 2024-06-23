@@ -2,10 +2,11 @@ from typing import List
 from app.utils import create_uuid
 import cv2
 import numpy as np
+import base64
 import logging
 
 from app.dao.FileDao import FileDao
-from app.types import PackageStatus, Package
+from app.types import PackageStatus, Package, FormField
 from app.dao.PackageDao import PackageDao
 from app.services.PdfService import PdfService
 from app.database import Storage
@@ -71,3 +72,28 @@ class PackageService:
         package.images_with_boxes_ids = image_ids
         PackageDao.upsert(package)
         return package
+
+    @classmethod
+    async def get_image_with_boxes_for_each_form_field(cls, package: Package) -> List[str, FormField]:
+        """
+        Get the image with box as base64 string for each form field
+        """
+        original_image_ids = package.original_image_ids
+        original_image_paths = [get_path_from_file_id(image_id) for image_id in original_image_ids]
+
+        images = [cv2.imread(image_path) for image_path in original_image_paths]
+        
+        form_fields = package.form_fields
+        
+        result = []
+
+        for form_field in form_fields:
+            page = form_field.page
+            bounding_box = form_field.bounding_box
+            image_with_box = images[page]
+            image_with_box = await cls.draw_bounding_boxes_on_image(image_with_box, [bounding_box])
+            _, buffer = cv2.imencode('.jpeg', image_with_box)
+            image_base64 = base64.b64encode(buffer).decode('utf-8')
+            result.append((image_base64, form_field))
+
+        return result

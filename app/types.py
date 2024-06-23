@@ -48,10 +48,9 @@ class PackageStatus(Enum):
 
 class FormFieldType(Enum):
     text = "text"
-    number = "number"
     date = "date"
     checkbox = "checkbox"
-    dropdown = "dropdown"
+    signature = "signature"
     undetermined = "undetermined"
 
 class FormField(BaseModel):
