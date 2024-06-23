@@ -7,7 +7,7 @@ def package_to_fe_package(package: Package) -> FePackage:
     for filled_out_package in package.filled_out_packages:
         filledOutPackages.append(FeFilledOutPackage(
             email=filled_out_package.email,
-            pdfPath=get_path_from_file_id(filled_out_package.id)
+            pdfPath=get_path_from_file_id(filled_out_package.filled_out_pdf_id)
         ))
     return FePackage(
         packageId=package.id,

@@ -4,7 +4,7 @@ url_get_package = "http://127.0.0.1:8000/getPackage"
 url_get_packages_rows = "http://127.0.0.1:8000/getPackagesRows"
 url_get_package_status = "http://127.0.0.1:8000/getPackageStatus"
 
-package_id = "packagec25a94a3-b4cc-41eb-92ef-dee02da16094"
+package_id = "package9502cf28-98b5-4873-ab5e-4c98222f54c3"
 
 response_get_package = requests.get(f"{url_get_package}?packageId={package_id}")
 print(response_get_package.status_code)

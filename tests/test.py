@@ -4,7 +4,7 @@ import base64
 url = "http://127.0.0.1:8000/createPackage"
 
 # List of file paths
-file_paths = ["demo_data/f941.pdf"]
+file_paths = ["demo_data/rand26.pdf"]
 
 # Prepare the files for the request
 files = [("files", (file_path, open(file_path, "rb"), "application/pdf")) for file_path in file_paths]

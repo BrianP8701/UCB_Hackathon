@@ -66,6 +66,7 @@ class FormField(BaseModel):
 class FilledOutPackage(BaseModel):
     id: str
     email: str
+    filled_out_pdf_id: str = ''
 
 class TypeformResponse(BaseModel):
     id: str

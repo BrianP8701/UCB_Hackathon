@@ -9,9 +9,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import shutil
 import io
 from pydantic import BaseModel
-import datetime
+from datetime import datetime
 import logging
-from PIL import Image, ImageDraw, ImageFont
+
 
 
 from app.utils import get_path_from_file_id
@@ -248,7 +248,6 @@ class PdfService:
             corresponding_form_fields = [form_fields[i] for i in current_final_form_field.mapping]
 
             if answer['type'] == 'short_text':
-                logging.info(f'{answer} in short text')
                 content = answer['text']
             elif answer['type'] == 'text':
                 if answer['field']['ref'] == 'email':
@@ -278,13 +277,15 @@ class PdfService:
   
 
         file_ids = FileDao.create_files([filled_out_pdf], '.pdf', 'filled_out_pdf')
+        package.filled_out_packages
         logging.info(f'file_ids: {file_ids}')
         return FilledOutPackage(
             id=typeform_response.id,
+            filled_out_pdf_id=file_ids[0],
             email=email
         )
-        
-        
+
+
     @classmethod
     def fill_pdf_form(cls, pdf_path: str, form_fields: List[PdfFormField]) -> bytes:
         """
@@ -297,7 +298,11 @@ class PdfService:
         for idx, field in enumerate(form_fields):
             logging.info(f'field to fill: {field}')
             page = doc[field.page]
-            rect = fitz.Rect(x0=field.rect[0], y0=field.rect[1], x1=field.rect[2], y1=field.rect[3])
+            x0 = field.rect[0]/4.155
+            y0 = field.rect[1]/4.155
+            x1 = field.rect[2]/4.155
+            y1 = field.rect[3]/4.155
+            rect = fitz.Rect(x0=x0, y0=y0, x1=x1, y1=y1)
             logging.info(f'Created rect: {rect}')
             
             widget = fitz.Widget()
@@ -305,7 +310,7 @@ class PdfService:
             widget.field_name = f'field_{idx}'
             widget.field_value = field.content
             widget.text_font = "Helv"
-            widget.text_fontsize = 30
+            widget.text_fontsize = 16
             widget.border_color = (0, 0, 0)
             widget.border_width = 1
             widget.fill_color = (1, 1, 1)

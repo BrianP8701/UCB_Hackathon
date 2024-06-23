@@ -1,741 +1,440 @@
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
+Preprocessed package: id='package9502cf28-98b5-4873-ab5e-4c98222f54c3' name='Test Package' status=<PackageStatus.preprocessing: 'Preprocessing'> original_pdf_id='original_pdf88b8b398-0249-4173-a382-03955254578d.pdf' original_image_ids=['original_imagead9d2bd8-38ca-467a-bd82-7a997a552b14.jpeg'] images_with_boxes_ids=[] typeform_json_schema={} form_fields=[] final_form=[] filled_out_packages=[] typeform_url='' typeform_id=''
 
 
-Creating filled out package for typeform response: o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh
-
-
-all form fields: [PdfFormField(content='testing', rect=(902, 1612, 1289, 1684), page=0), PdfFormField(content='tttttttt', rect=(1854, 1490, 1904, 1537), page=0), PdfFormField(content=False, rect=(863, 1373, 1205, 1436), page=1), PdfFormField(content=False, rect=(1859, 2751, 2368, 2810), page=1), PdfFormField(content=True, rect=(448, 2346, 781, 2409), page=1), PdfFormField(content=True, rect=(1904, 1796, 1965, 1860), page=1), PdfFormField(content=True, rect=(1857, 2552, 2367, 2610), page=1), PdfFormField(content=False, rect=(1808, 1796, 1875, 1861), page=1)]
-
-
-pdf_path: /Users/michael/Desktop/vscode/real-estate-form/public/storage/original_pdf0e2e5120-4116-4cb9-a9a2-cece694f45a9.pdf
-
-
-field to fill: content='testing' rect=(902, 1612, 1289, 1684) page=0
-
-
-Created rect: Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Inserting text: testing at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Widget added and updated at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-field to fill: content='tttttttt' rect=(1854, 1490, 1904, 1537) page=0
-
-
-Created rect: Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Inserting text: tttttttt at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Widget added and updated at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-field to fill: content=False rect=(863, 1373, 1205, 1436) page=1
-
-
-Created rect: Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Inserting checkbox: False at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Widget added and updated at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-field to fill: content=False rect=(1859, 2751, 2368, 2810) page=1
-
-
-Created rect: Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Inserting checkbox: False at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Widget added and updated at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-field to fill: content=True rect=(448, 2346, 781, 2409) page=1
-
-
-Created rect: Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Inserting checkbox: True at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Widget added and updated at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-field to fill: content=True rect=(1904, 1796, 1965, 1860) page=1
-
-
-Created rect: Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Inserting checkbox: True at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Widget added and updated at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-field to fill: content=True rect=(1857, 2552, 2367, 2610) page=1
-
-
-Created rect: Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Inserting checkbox: True at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Widget added and updated at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-field to fill: content=False rect=(1808, 1796, 1875, 1861) page=1
-
-
-Created rect: Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Inserting checkbox: False at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Widget added and updated at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-PDF saved successfully to filled_out_pdf_temp.pdf
-
-
-file_ids: ['filled_out_pdfdb26ffe6-0fc7-4713-9456-45af12cabb14.pdf']
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-Creating filled out package for typeform response: o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh
-
-
-all form fields: [PdfFormField(content='testing', rect=(902, 1612, 1289, 1684), page=0), PdfFormField(content='tttttttt', rect=(1854, 1490, 1904, 1537), page=0), PdfFormField(content=False, rect=(863, 1373, 1205, 1436), page=1), PdfFormField(content=False, rect=(1859, 2751, 2368, 2810), page=1), PdfFormField(content=True, rect=(448, 2346, 781, 2409), page=1), PdfFormField(content=True, rect=(1904, 1796, 1965, 1860), page=1), PdfFormField(content=True, rect=(1857, 2552, 2367, 2610), page=1), PdfFormField(content=False, rect=(1808, 1796, 1875, 1861), page=1)]
-
-
-pdf_path: /Users/michael/Desktop/vscode/real-estate-form/public/storage/original_pdf0e2e5120-4116-4cb9-a9a2-cece694f45a9.pdf
-
-
-field to fill: content='testing' rect=(902, 1612, 1289, 1684) page=0
-
-
-Created rect: Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Inserting text: testing at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Widget added and updated at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-field to fill: content='tttttttt' rect=(1854, 1490, 1904, 1537) page=0
-
-
-Created rect: Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Inserting text: tttttttt at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Widget added and updated at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-field to fill: content=False rect=(863, 1373, 1205, 1436) page=1
-
-
-Created rect: Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Inserting checkbox: False at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Widget added and updated at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-field to fill: content=False rect=(1859, 2751, 2368, 2810) page=1
-
-
-Created rect: Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Inserting checkbox: False at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Widget added and updated at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-field to fill: content=True rect=(448, 2346, 781, 2409) page=1
-
-
-Created rect: Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Inserting checkbox: True at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Widget added and updated at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-field to fill: content=True rect=(1904, 1796, 1965, 1860) page=1
-
-
-Created rect: Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Inserting checkbox: True at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Widget added and updated at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-field to fill: content=True rect=(1857, 2552, 2367, 2610) page=1
-
-
-Created rect: Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Inserting checkbox: True at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Widget added and updated at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-field to fill: content=False rect=(1808, 1796, 1875, 1861) page=1
-
-
-Created rect: Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Inserting checkbox: False at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Widget added and updated at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-PDF saved successfully to filled_out_pdf_temp.pdf
-
-
-file_ids: ['filled_out_pdfc352299e-7425-4173-9909-918307663bb1.pdf']
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-Creating filled out package for typeform response: o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh
-
-
-all form fields: [PdfFormField(content='testing', rect=(902, 1612, 1289, 1684), page=0), PdfFormField(content='tttttttt', rect=(1854, 1490, 1904, 1537), page=0), PdfFormField(content=False, rect=(863, 1373, 1205, 1436), page=1), PdfFormField(content=False, rect=(1859, 2751, 2368, 2810), page=1), PdfFormField(content=True, rect=(448, 2346, 781, 2409), page=1), PdfFormField(content=True, rect=(1904, 1796, 1965, 1860), page=1), PdfFormField(content=True, rect=(1857, 2552, 2367, 2610), page=1), PdfFormField(content=False, rect=(1808, 1796, 1875, 1861), page=1)]
-
-
-pdf_path: /Users/michael/Desktop/vscode/real-estate-form/public/storage/original_pdf0e2e5120-4116-4cb9-a9a2-cece694f45a9.pdf
-
-
-field to fill: content='testing' rect=(902, 1612, 1289, 1684) page=0
-
-
-Created rect: Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Inserting text: testing at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Widget added and updated at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-field to fill: content='tttttttt' rect=(1854, 1490, 1904, 1537) page=0
-
-
-Created rect: Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Inserting text: tttttttt at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Widget added and updated at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-field to fill: content=False rect=(863, 1373, 1205, 1436) page=1
-
-
-Created rect: Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Inserting checkbox: False at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Widget added and updated at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-field to fill: content=False rect=(1859, 2751, 2368, 2810) page=1
-
-
-Created rect: Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Inserting checkbox: False at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Widget added and updated at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-field to fill: content=True rect=(448, 2346, 781, 2409) page=1
-
-
-Created rect: Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Inserting checkbox: True at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Widget added and updated at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-field to fill: content=True rect=(1904, 1796, 1965, 1860) page=1
-
-
-Created rect: Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Inserting checkbox: True at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Widget added and updated at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-field to fill: content=True rect=(1857, 2552, 2367, 2610) page=1
-
-
-Created rect: Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Inserting checkbox: True at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Widget added and updated at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-field to fill: content=False rect=(1808, 1796, 1875, 1861) page=1
-
-
-Created rect: Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Inserting checkbox: False at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Widget added and updated at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-PDF saved successfully to filled_out_pdf_temp.pdf
-
-
-file_ids: ['filled_out_pdff5869224-017e-46f7-a62c-ef0a5e352afa.pdf']
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-Creating filled out package for typeform response: o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh
-
-
-all form fields: [PdfFormField(content='testing', rect=(902, 1612, 1289, 1684), page=0), PdfFormField(content='tttttttt', rect=(1854, 1490, 1904, 1537), page=0), PdfFormField(content=False, rect=(863, 1373, 1205, 1436), page=1), PdfFormField(content=False, rect=(1859, 2751, 2368, 2810), page=1), PdfFormField(content=True, rect=(448, 2346, 781, 2409), page=1), PdfFormField(content=True, rect=(1904, 1796, 1965, 1860), page=1), PdfFormField(content=True, rect=(1857, 2552, 2367, 2610), page=1), PdfFormField(content=False, rect=(1808, 1796, 1875, 1861), page=1)]
-
-
-pdf_path: /Users/michael/Desktop/vscode/real-estate-form/public/storage/original_pdf0e2e5120-4116-4cb9-a9a2-cece694f45a9.pdf
-
-
-field to fill: content='testing' rect=(902, 1612, 1289, 1684) page=0
-
-
-Created rect: Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Inserting text: testing at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Widget added and updated at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-field to fill: content='tttttttt' rect=(1854, 1490, 1904, 1537) page=0
-
-
-Created rect: Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Inserting text: tttttttt at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Widget added and updated at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-field to fill: content=False rect=(863, 1373, 1205, 1436) page=1
-
-
-Created rect: Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Inserting checkbox: False at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Widget added and updated at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-field to fill: content=False rect=(1859, 2751, 2368, 2810) page=1
-
-
-Created rect: Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Inserting checkbox: False at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Widget added and updated at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-field to fill: content=True rect=(448, 2346, 781, 2409) page=1
-
-
-Created rect: Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Inserting checkbox: True at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Widget added and updated at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-field to fill: content=True rect=(1904, 1796, 1965, 1860) page=1
-
-
-Created rect: Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Inserting checkbox: True at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Widget added and updated at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-field to fill: content=True rect=(1857, 2552, 2367, 2610) page=1
-
-
-Created rect: Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Inserting checkbox: True at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Widget added and updated at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-field to fill: content=False rect=(1808, 1796, 1875, 1861) page=1
-
-
-Created rect: Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Inserting checkbox: False at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Widget added and updated at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-PDF saved successfully to filled_out_pdf_temp.pdf
-
-
-file_ids: ['filled_out_pdfaa1d492d-d129-4024-8d04-6b7b31e6a38c.pdf']
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-Creating filled out package for typeform response: o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh
-
-
-all form fields: [PdfFormField(content='testing', rect=(902, 1612, 1289, 1684), page=0), PdfFormField(content='tttttttt', rect=(1854, 1490, 1904, 1537), page=0), PdfFormField(content=False, rect=(863, 1373, 1205, 1436), page=1), PdfFormField(content=False, rect=(1859, 2751, 2368, 2810), page=1), PdfFormField(content=True, rect=(448, 2346, 781, 2409), page=1), PdfFormField(content=True, rect=(1904, 1796, 1965, 1860), page=1), PdfFormField(content=True, rect=(1857, 2552, 2367, 2610), page=1), PdfFormField(content=False, rect=(1808, 1796, 1875, 1861), page=1)]
-
-
-pdf_path: /Users/michael/Desktop/vscode/real-estate-form/public/storage/original_pdf0e2e5120-4116-4cb9-a9a2-cece694f45a9.pdf
-
-
-field to fill: content='testing' rect=(902, 1612, 1289, 1684) page=0
-
-
-Created rect: Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Inserting text: testing at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Widget added and updated at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-field to fill: content='tttttttt' rect=(1854, 1490, 1904, 1537) page=0
-
-
-Created rect: Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Inserting text: tttttttt at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Widget added and updated at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-field to fill: content=False rect=(863, 1373, 1205, 1436) page=1
-
-
-Created rect: Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Inserting checkbox: False at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Widget added and updated at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-field to fill: content=False rect=(1859, 2751, 2368, 2810) page=1
-
-
-Created rect: Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Inserting checkbox: False at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Widget added and updated at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-field to fill: content=True rect=(448, 2346, 781, 2409) page=1
-
-
-Created rect: Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Inserting checkbox: True at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Widget added and updated at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-field to fill: content=True rect=(1904, 1796, 1965, 1860) page=1
-
-
-Created rect: Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Inserting checkbox: True at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Widget added and updated at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-field to fill: content=True rect=(1857, 2552, 2367, 2610) page=1
-
-
-Created rect: Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Inserting checkbox: True at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Widget added and updated at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-field to fill: content=False rect=(1808, 1796, 1875, 1861) page=1
-
-
-Created rect: Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Inserting checkbox: False at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Widget added and updated at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-PDF saved successfully to filled_out_pdf_temp.pdf
-
-
-file_ids: ['filled_out_pdff9fce68f-ba07-4006-8e92-a7144a8dad5d.pdf']
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-Creating filled out package for typeform response: o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh
-
-
-all form fields: [PdfFormField(content='testing', rect=(902, 1612, 1289, 1684), page=0), PdfFormField(content='tttttttt', rect=(1854, 1490, 1904, 1537), page=0), PdfFormField(content=False, rect=(863, 1373, 1205, 1436), page=1), PdfFormField(content=False, rect=(1859, 2751, 2368, 2810), page=1), PdfFormField(content=True, rect=(448, 2346, 781, 2409), page=1), PdfFormField(content=True, rect=(1904, 1796, 1965, 1860), page=1), PdfFormField(content=True, rect=(1857, 2552, 2367, 2610), page=1), PdfFormField(content=False, rect=(1808, 1796, 1875, 1861), page=1)]
-
-
-pdf_path: /Users/michael/Desktop/vscode/real-estate-form/public/storage/original_pdf0e2e5120-4116-4cb9-a9a2-cece694f45a9.pdf
-
-
-field to fill: content='testing' rect=(902, 1612, 1289, 1684) page=0
-
-
-Created rect: Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Inserting text: testing at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-Widget added and updated at Rect(902.0, 1612.0, 1289.0, 1684.0)
-
-
-field to fill: content='tttttttt' rect=(1854, 1490, 1904, 1537) page=0
-
-
-Created rect: Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Inserting text: tttttttt at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-Widget added and updated at Rect(1854.0, 1490.0, 1904.0, 1537.0)
-
-
-field to fill: content=False rect=(863, 1373, 1205, 1436) page=1
-
-
-Created rect: Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Inserting checkbox: False at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-Widget added and updated at Rect(863.0, 1373.0, 1205.0, 1436.0)
-
-
-field to fill: content=False rect=(1859, 2751, 2368, 2810) page=1
-
-
-Created rect: Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Inserting checkbox: False at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-Widget added and updated at Rect(1859.0, 2751.0, 2368.0, 2810.0)
-
-
-field to fill: content=True rect=(448, 2346, 781, 2409) page=1
-
-
-Created rect: Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Inserting checkbox: True at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-Widget added and updated at Rect(448.0, 2346.0, 781.0, 2409.0)
-
-
-field to fill: content=True rect=(1904, 1796, 1965, 1860) page=1
-
-
-Created rect: Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Inserting checkbox: True at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-Widget added and updated at Rect(1904.0, 1796.0, 1965.0, 1860.0)
-
-
-field to fill: content=True rect=(1857, 2552, 2367, 2610) page=1
-
-
-Created rect: Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Inserting checkbox: True at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-Widget added and updated at Rect(1857.0, 2552.0, 2367.0, 2610.0)
-
-
-field to fill: content=False rect=(1808, 1796, 1875, 1861) page=1
-
-
-Created rect: Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Inserting checkbox: False at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-Widget added and updated at Rect(1808.0, 1796.0, 1875.0, 1861.0)
-
-
-PDF saved successfully to filled_out_pdf_temp.pdf
-
-
-file_ids: ['filled_out_pdf2699a3c9-98ca-4bcd-8bc6-19558144a6b9.pdf']
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-All typeform responses: [TypeformResponse(id='o8w2ksxnmjf8iv4uo8w2kqxfv0ueidlh', answers=[{'field': {'id': 'TcV1oI12HitS', 'type': 'short_text', 'ref': 'final_form_field964360b3-a09d-4d01-8551-a9dd413b2c9c'}, 'type': 'text', 'text': 'testing'}, {'field': {'id': 'ocp6mA4zttrM', 'type': 'short_text', 'ref': 'final_form_field62baa0d2-bd74-410a-b42b-dad04722634b'}, 'type': 'text', 'text': 'tttttttt'}, {'field': {'id': 'UXrVBKsRHokI', 'type': 'yes_no', 'ref': 'final_form_field46eee97c-21d2-4abe-844d-3f3e57774be1'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'a2zgFAJ08PXB', 'type': 'yes_no', 'ref': 'final_form_field23202e6e-491a-4a06-a577-f57f409545aa'}, 'type': 'boolean', 'boolean': True}, {'field': {'id': 'N7AUq2eqV348', 'type': 'yes_no', 'ref': 'final_form_field8e419937-d171-4708-8152-80884644a031'}, 'type': 'boolean', 'boolean': False}, {'field': {'id': 'ZrJNLuvkGh06', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'hi@gmail.com'}])]
-
-
-Sending message to the model:
-
-
-Current form field to map: 
-Description: 
+Yolo stage complete: id='package9502cf28-98b5-4873-ab5e-4c98222f54c3' name='Test Package' status=<PackageStatus.detecting: 'Detecting Form Boxes with YOLO'> original_pdf_id='original_pdf88b8b398-0249-4173-a382-03955254578d.pdf' original_image_ids=['original_imagead9d2bd8-38ca-467a-bd82-7a997a552b14.jpeg'] images_with_boxes_ids=['image_with_boxes85004b63-4b29-4099-981f-8ad53d2817ca.jpeg'] typeform_json_schema={} form_fields=[FormField(id='form_field5caf7cdf-5371-46c4-a013-f0872cf42849', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[426, 1024, 1737, 1135], page=0, mapping=[]), FormField(id='form_field511142a7-d3ca-4168-a3b0-b620b69f8cf2', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1140, 2327, 1251], page=0, mapping=[]), FormField(id='form_field4473a346-9454-46b5-9e40-980c102aad24', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1254, 2327, 1366], page=0, mapping=[]), FormField(id='form_fieldb7bcc511-720b-4de6-aded-0013b57d9c8f', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1369, 2327, 1480], page=0, mapping=[]), FormField(id='form_field2cc6fd31-bcd8-435d-8b84-b710d262584b', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[831, 1762, 1814, 1873], page=0, mapping=[]), FormField(id='form_field34ec18bf-51ef-44a8-b061-a897e3d4e86d', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[1916, 1762, 2262, 1873], page=0, mapping=[]), FormField(id='form_field27ebbc72-0e75-43ec-9ca3-2cbd5a75f184', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[590, 2123, 1859, 2234], page=0, mapping=[]), FormField(id='form_field8bc4676e-3d65-4979-afe6-9cc88f14a290', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[418, 2253, 1499, 2364], page=0, mapping=[]), FormField(id='form_field6e25a82d-b258-4849-ae6c-145b4f71531b', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[655, 2382, 1854, 2493], page=0, mapping=[]), FormField(id='form_field6c9275b6-17df-4e83-9992-cac2b6c47518', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[1953, 2382, 2329, 2493], page=0, mapping=[]), FormField(id='form_fieldff132156-e1c0-4eb5-9da1-8354c77e184b', name='', description='', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[920, 2729, 1566, 2840], page=0, mapping=[])] final_form=[] filled_out_packages=[] typeform_url='' typeform_id=''
 
 
 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 
 
 Received completion from the model:
-no_mapping=True index=-1
-
-
-Sending message to the model:
-
-
-Current form field to map: 
-Description: 
+name='owner of lockbox(s) list s/n #s' description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.' form_field_type=<ExtractFormFieldType.text: 'text'>
 
 
 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 
 
 Received completion from the model:
-no_mapping=True index=-1
-
-
-Sending message to the model:
-
-
-Current form field to map: 
-Description: 
+name="Transferor's Signature" description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.' form_field_type=<ExtractFormFieldType.signature: 'signature'>
 
 
 HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 
 
 Received completion from the model:
-no_mapping=True index=-1
+name="Transferor's Name" description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.' form_field_type=<ExtractFormFieldType.text: 'text'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name="Transferee's Name" description='The name of the new holder (Transferee) of the lockbox(es). This field is to be filled out by the new holder who is receiving the lockbox(es).' form_field_type=<ExtractFormFieldType.text: 'text'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='Date reassigned lockbox in Supra' description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.' form_field_type=<ExtractFormFieldType.date: 'date'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='Lockbox Serial Numbers' description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.' form_field_type=<ExtractFormFieldType.text: 'text'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='Company' description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.' form_field_type=<ExtractFormFieldType.text: 'text'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='owner of lockbox(s) list s/n #s' description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.' form_field_type=<ExtractFormFieldType.text: 'text'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='Company' description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.' form_field_type=<ExtractFormFieldType.text: 'text'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='Date' description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.' form_field_type=<ExtractFormFieldType.date: 'date'>
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+name='Date' description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.' form_field_type=<ExtractFormFieldType.date: 'date'>
+
+
+Description stage complete: id='package9502cf28-98b5-4873-ab5e-4c98222f54c3' name='Test Package' status=<PackageStatus.analyzing: 'Analyzing Form Boxes With GPT4o'> original_pdf_id='original_pdf88b8b398-0249-4173-a382-03955254578d.pdf' original_image_ids=['original_imagead9d2bd8-38ca-467a-bd82-7a997a552b14.jpeg'] images_with_boxes_ids=['image_with_boxes85004b63-4b29-4099-981f-8ad53d2817ca.jpeg'] typeform_json_schema={} form_fields=[FormField(id='form_field5caf7cdf-5371-46c4-a013-f0872cf42849', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[426, 1024, 1737, 1135], page=0, mapping=[]), FormField(id='form_field511142a7-d3ca-4168-a3b0-b620b69f8cf2', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1140, 2327, 1251], page=0, mapping=[]), FormField(id='form_field4473a346-9454-46b5-9e40-980c102aad24', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1254, 2327, 1366], page=0, mapping=[]), FormField(id='form_fieldb7bcc511-720b-4de6-aded-0013b57d9c8f', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1369, 2327, 1480], page=0, mapping=[]), FormField(id='form_field2cc6fd31-bcd8-435d-8b84-b710d262584b', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[831, 1762, 1814, 1873], page=0, mapping=[]), FormField(id='form_field34ec18bf-51ef-44a8-b061-a897e3d4e86d', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1916, 1762, 2262, 1873], page=0, mapping=[]), FormField(id='form_field27ebbc72-0e75-43ec-9ca3-2cbd5a75f184', name="Transferee's Name", description='The name of the new holder (Transferee) of the lockbox(es). This field is to be filled out by the new holder who is receiving the lockbox(es).', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[590, 2123, 1859, 2234], page=0, mapping=[]), FormField(id='form_field8bc4676e-3d65-4979-afe6-9cc88f14a290', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[418, 2253, 1499, 2364], page=0, mapping=[]), FormField(id='form_field6e25a82d-b258-4849-ae6c-145b4f71531b', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[655, 2382, 1854, 2493], page=0, mapping=[]), FormField(id='form_field6c9275b6-17df-4e83-9992-cac2b6c47518', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1953, 2382, 2329, 2493], page=0, mapping=[]), FormField(id='form_fieldff132156-e1c0-4eb5-9da1-8354c77e184b', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[920, 2729, 1566, 2840], page=0, mapping=[])] final_form=[] filled_out_packages=[] typeform_url='' typeform_id=''
+
+
+Sending message to the model:
+
+
+Current form field to map: Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=2
+
+
+Sending message to the model:
+0. Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+Current form field to map: owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=0
+
+
+Sending message to the model:
+0. Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+1. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.
+
+Current form field to map: owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=1
+
+
+Sending message to the model:
+0. Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+1. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.
+
+2. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.
+
+Current form field to map: Lockbox Serial Numbers
+Description: A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=1
+
+
+Sending message to the model:
+
+
+Current form field to map: Transferor's Signature
+Description: The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=3
+
+
+Sending message to the model:
+
+
+Current form field to map: Date
+Description: The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=2
+
+
+Sending message to the model:
+0. Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+1. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.
+
+2. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.
+
+3. Lockbox Serial Numbers
+Description: A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.
+
+Current form field to map: Transferee's Name
+Description: The name of the new holder (Transferee) of the lockbox(es). This field is to be filled out by the new holder who is receiving the lockbox(es).
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=False index=-1
+
+
+Sending message to the model:
+0. Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+1. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.
+
+2. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.
+
+3. Lockbox Serial Numbers
+Description: A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.
+
+Current form field to map: Company
+Description: The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=False index=-1
+
+
+Sending message to the model:
+0. Transferor's Name
+Description: The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.
+
+1. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.
+
+2. owner of lockbox(s) list s/n #s
+Description: The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.
+
+3. Lockbox Serial Numbers
+Description: A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.
+
+Current form field to map: Company
+Description: The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=False index=-1
+
+
+Sending message to the model:
+0. Date
+Description: The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.
+
+Current form field to map: Date
+Description: The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=0
+
+
+Sending message to the model:
+0. Date
+Description: The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.
+
+1. Date
+Description: The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.
+
+Current form field to map: Date reassigned lockbox in Supra
+Description: The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.
+
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+Received completion from the model:
+has_mapping=True index=0
+
+
+Dedupe stage complete: id='package9502cf28-98b5-4873-ab5e-4c98222f54c3' name='Test Package' status=<PackageStatus.dedupe: 'Deduplicating Form Fields'> original_pdf_id='original_pdf88b8b398-0249-4173-a382-03955254578d.pdf' original_image_ids=['original_imagead9d2bd8-38ca-467a-bd82-7a997a552b14.jpeg'] images_with_boxes_ids=['image_with_boxes85004b63-4b29-4099-981f-8ad53d2817ca.jpeg'] typeform_json_schema={} form_fields=[FormField(id='form_field5caf7cdf-5371-46c4-a013-f0872cf42849', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[426, 1024, 1737, 1135], page=0, mapping=[2]), FormField(id='form_field511142a7-d3ca-4168-a3b0-b620b69f8cf2', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1140, 2327, 1251], page=0, mapping=[0]), FormField(id='form_field4473a346-9454-46b5-9e40-980c102aad24', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1254, 2327, 1366], page=0, mapping=[1]), FormField(id='form_fieldb7bcc511-720b-4de6-aded-0013b57d9c8f', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1369, 2327, 1480], page=0, mapping=[1]), FormField(id='form_field2cc6fd31-bcd8-435d-8b84-b710d262584b', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[831, 1762, 1814, 1873], page=0, mapping=[3]), FormField(id='form_field34ec18bf-51ef-44a8-b061-a897e3d4e86d', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1916, 1762, 2262, 1873], page=0, mapping=[2]), FormField(id='form_field27ebbc72-0e75-43ec-9ca3-2cbd5a75f184', name="Transferee's Name", description='The name of the new holder (Transferee) of the lockbox(es). This field is to be filled out by the new holder who is receiving the lockbox(es).', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[590, 2123, 1859, 2234], page=0, mapping=[-1]), FormField(id='form_field8bc4676e-3d65-4979-afe6-9cc88f14a290', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[418, 2253, 1499, 2364], page=0, mapping=[-1]), FormField(id='form_field6e25a82d-b258-4849-ae6c-145b4f71531b', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[655, 2382, 1854, 2493], page=0, mapping=[-1]), FormField(id='form_field6c9275b6-17df-4e83-9992-cac2b6c47518', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1953, 2382, 2329, 2493], page=0, mapping=[0]), FormField(id='form_fieldff132156-e1c0-4eb5-9da1-8354c77e184b', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[920, 2729, 1566, 2840], page=0, mapping=[0])] final_form=[FormField(id='final_form_field7e6c4b04-2324-4507-9a5b-25bd0fc899c2', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[0]), FormField(id='final_form_field8efe2985-3964-4ebb-960e-880d7f894218', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[1]), FormField(id='final_form_field01008dad-a347-400e-8c3b-8e7425a67ef8', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[2]), FormField(id='final_form_field14f92db9-f4d3-4e06-9bda-08739c88bd6e', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[3]), FormField(id='final_form_field5cb2c20b-afd3-4804-8e5a-fdd1bab67860', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[], page=-1, mapping=[4]), FormField(id='final_form_fieldfedae2df-fbb0-42fe-9e57-d8d61a4635f3', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[5, 6, 7, 8]), FormField(id='final_form_fieldff11f30f-bf1c-45aa-97ab-082992d0739c', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[9]), FormField(id='final_form_field344aba7c-6d37-4778-aac8-8994429b1a6f', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[10])] filled_out_packages=[] typeform_url='' typeform_id=''
+
+
+Typeform form created: id='package9502cf28-98b5-4873-ab5e-4c98222f54c3' name='Test Package' status=<PackageStatus.create: 'Creating Typeform Form'> original_pdf_id='original_pdf88b8b398-0249-4173-a382-03955254578d.pdf' original_image_ids=['original_imagead9d2bd8-38ca-467a-bd82-7a997a552b14.jpeg'] images_with_boxes_ids=['image_with_boxes85004b63-4b29-4099-981f-8ad53d2817ca.jpeg'] typeform_json_schema={} form_fields=[FormField(id='form_field5caf7cdf-5371-46c4-a013-f0872cf42849', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[426, 1024, 1737, 1135], page=0, mapping=[2]), FormField(id='form_field511142a7-d3ca-4168-a3b0-b620b69f8cf2', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1140, 2327, 1251], page=0, mapping=[0]), FormField(id='form_field4473a346-9454-46b5-9e40-980c102aad24', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1254, 2327, 1366], page=0, mapping=[1]), FormField(id='form_fieldb7bcc511-720b-4de6-aded-0013b57d9c8f', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1369, 2327, 1480], page=0, mapping=[1]), FormField(id='form_field2cc6fd31-bcd8-435d-8b84-b710d262584b', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[831, 1762, 1814, 1873], page=0, mapping=[3]), FormField(id='form_field34ec18bf-51ef-44a8-b061-a897e3d4e86d', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1916, 1762, 2262, 1873], page=0, mapping=[2]), FormField(id='form_field27ebbc72-0e75-43ec-9ca3-2cbd5a75f184', name="Transferee's Name", description='The name of the new holder (Transferee) of the lockbox(es). This field is to be filled out by the new holder who is receiving the lockbox(es).', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[590, 2123, 1859, 2234], page=0, mapping=[-1]), FormField(id='form_field8bc4676e-3d65-4979-afe6-9cc88f14a290', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[418, 2253, 1499, 2364], page=0, mapping=[-1]), FormField(id='form_field6e25a82d-b258-4849-ae6c-145b4f71531b', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[655, 2382, 1854, 2493], page=0, mapping=[-1]), FormField(id='form_field6c9275b6-17df-4e83-9992-cac2b6c47518', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1953, 2382, 2329, 2493], page=0, mapping=[0]), FormField(id='form_fieldff132156-e1c0-4eb5-9da1-8354c77e184b', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[920, 2729, 1566, 2840], page=0, mapping=[0])] final_form=[FormField(id='final_form_field7e6c4b04-2324-4507-9a5b-25bd0fc899c2', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[0]), FormField(id='final_form_field8efe2985-3964-4ebb-960e-880d7f894218', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[1]), FormField(id='final_form_field01008dad-a347-400e-8c3b-8e7425a67ef8', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[2]), FormField(id='final_form_field14f92db9-f4d3-4e06-9bda-08739c88bd6e', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[3]), FormField(id='final_form_field5cb2c20b-afd3-4804-8e5a-fdd1bab67860', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[], page=-1, mapping=[4]), FormField(id='final_form_fieldfedae2df-fbb0-42fe-9e57-d8d61a4635f3', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[5, 6, 7, 8]), FormField(id='final_form_fieldff11f30f-bf1c-45aa-97ab-082992d0739c', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[9]), FormField(id='final_form_field344aba7c-6d37-4778-aac8-8994429b1a6f', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[10]), FormField(id='email', name='Email', description='Enter your email address', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[])] filled_out_packages=[] typeform_url='https://nu759v3pjcw.typeform.com/to/xIoIb6co' typeform_id='xIoIb6co'
+
+
+Typeform form id: xIoIb6co
+
+
+Typeform form url: https://nu759v3pjcw.typeform.com/to/xIoIb6co
+
+
+Create stage complete: id='package9502cf28-98b5-4873-ab5e-4c98222f54c3' name='Test Package' status=<PackageStatus.create: 'Creating Typeform Form'> original_pdf_id='original_pdf88b8b398-0249-4173-a382-03955254578d.pdf' original_image_ids=['original_imagead9d2bd8-38ca-467a-bd82-7a997a552b14.jpeg'] images_with_boxes_ids=['image_with_boxes85004b63-4b29-4099-981f-8ad53d2817ca.jpeg'] typeform_json_schema={} form_fields=[FormField(id='form_field5caf7cdf-5371-46c4-a013-f0872cf42849', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[426, 1024, 1737, 1135], page=0, mapping=[2]), FormField(id='form_field511142a7-d3ca-4168-a3b0-b620b69f8cf2', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1140, 2327, 1251], page=0, mapping=[0]), FormField(id='form_field4473a346-9454-46b5-9e40-980c102aad24', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1254, 2327, 1366], page=0, mapping=[1]), FormField(id='form_fieldb7bcc511-720b-4de6-aded-0013b57d9c8f', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[318, 1369, 2327, 1480], page=0, mapping=[1]), FormField(id='form_field2cc6fd31-bcd8-435d-8b84-b710d262584b', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[831, 1762, 1814, 1873], page=0, mapping=[3]), FormField(id='form_field34ec18bf-51ef-44a8-b061-a897e3d4e86d', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1916, 1762, 2262, 1873], page=0, mapping=[2]), FormField(id='form_field27ebbc72-0e75-43ec-9ca3-2cbd5a75f184', name="Transferee's Name", description='The name of the new holder (Transferee) of the lockbox(es). This field is to be filled out by the new holder who is receiving the lockbox(es).', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[590, 2123, 1859, 2234], page=0, mapping=[-1]), FormField(id='form_field8bc4676e-3d65-4979-afe6-9cc88f14a290', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[418, 2253, 1499, 2364], page=0, mapping=[-1]), FormField(id='form_field6e25a82d-b258-4849-ae6c-145b4f71531b', name='Company', description='The name of the company that the transferee (new holder of the lockbox) is associated with. This field is to be filled out by the transferee.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[655, 2382, 1854, 2493], page=0, mapping=[-1]), FormField(id='form_field6c9275b6-17df-4e83-9992-cac2b6c47518', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[1953, 2382, 2329, 2493], page=0, mapping=[0]), FormField(id='form_fieldff132156-e1c0-4eb5-9da1-8354c77e184b', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[920, 2729, 1566, 2840], page=0, mapping=[0])] final_form=[FormField(id='final_form_field7e6c4b04-2324-4507-9a5b-25bd0fc899c2', name="Transferor's Name", description='The name of the original holder (Transferor) of the lockbox who is informing the Big Bear Association of REALTORS® about the transfer of the lockbox.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[0]), FormField(id='final_form_field8efe2985-3964-4ebb-960e-880d7f894218', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to list all the serial numbers of the lockboxes that are being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[1]), FormField(id='final_form_field01008dad-a347-400e-8c3b-8e7425a67ef8', name='owner of lockbox(s) list s/n #s', description='The serial numbers of the lockboxes owned by the transferor. This field is used to specify the unique identifiers of the lockboxes being transferred.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[2]), FormField(id='final_form_field14f92db9-f4d3-4e06-9bda-08739c88bd6e', name='Lockbox Serial Numbers', description='A field to list the serial numbers of the lockboxes being transferred. This should include all relevant serial numbers associated with the lockboxes.', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[3]), FormField(id='final_form_field5cb2c20b-afd3-4804-8e5a-fdd1bab67860', name="Transferor's Signature", description='The signature of the original holder (Transferor) of the lockbox(es) to authorize the transfer.', form_field_type=<FormFieldType.signature: 'signature'>, bounding_box=[], page=-1, mapping=[4]), FormField(id='final_form_fieldfedae2df-fbb0-42fe-9e57-d8d61a4635f3', name='Date', description='The date when the transferor signs the document. This field is meant to capture the specific date on which the transferor has authorized the transfer of the lockbox.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[5, 6, 7, 8]), FormField(id='final_form_fieldff11f30f-bf1c-45aa-97ab-082992d0739c', name='Date', description='The date when the transferee signs the form. This field is to be filled out by the new holder (transferee) of the lockbox(es) to indicate the date of the transfer.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[9]), FormField(id='final_form_field344aba7c-6d37-4778-aac8-8994429b1a6f', name='Date reassigned lockbox in Supra', description='The date on which the lockbox was reassigned in the Supra system. This field is for official use by the board office only.', form_field_type=<FormFieldType.date: 'date'>, bounding_box=[], page=-1, mapping=[10]), FormField(id='email', name='Email', description='Enter your email address', form_field_type=<FormFieldType.text: 'text'>, bounding_box=[], page=-1, mapping=[])] filled_out_packages=[] typeform_url='https://nu759v3pjcw.typeform.com/to/xIoIb6co' typeform_id='xIoIb6co'
+
+
+All typeform responses: [TypeformResponse(id='at1i563sf3b57sra6uat1i5280dpkrcq', answers=[{'field': {'id': 'z174KXHRzHTT', 'type': 'short_text', 'ref': 'final_form_field7e6c4b04-2324-4507-9a5b-25bd0fc899c2'}, 'type': 'text', 'text': 'asfawf'}, {'field': {'id': '9MCwKCrI4oKH', 'type': 'short_text', 'ref': 'final_form_field8efe2985-3964-4ebb-960e-880d7f894218'}, 'type': 'text', 'text': 'afvawf'}, {'field': {'id': 'nBtQlQjuscOZ', 'type': 'short_text', 'ref': 'final_form_field01008dad-a347-400e-8c3b-8e7425a67ef8'}, 'type': 'text', 'text': 'wafawfwafwa'}, {'field': {'id': 'teKVGo7lhocd', 'type': 'short_text', 'ref': 'final_form_field14f92db9-f4d3-4e06-9bda-08739c88bd6e'}, 'type': 'text', 'text': 'awfwafawf'}, {'field': {'id': 'nly6Bc87anD3', 'type': 'date', 'ref': 'final_form_fieldfedae2df-fbb0-42fe-9e57-d8d61a4635f3'}, 'type': 'date', 'date': '1111-11-11T00:00:00.000Z'}, {'field': {'id': 'yxEfixuJ41dH', 'type': 'date', 'ref': 'final_form_fieldff11f30f-bf1c-45aa-97ab-082992d0739c'}, 'type': 'date', 'date': '2222-02-22T00:00:00.000Z'}, {'field': {'id': '4pRDwS9cyGMU', 'type': 'date', 'ref': 'final_form_field344aba7c-6d37-4778-aac8-8994429b1a6f'}, 'type': 'date', 'date': '1111-01-11T00:00:00.000Z'}, {'field': {'id': 'b84uIBw3eHmR', 'type': 'short_text', 'ref': 'email'}, 'type': 'text', 'text': 'b@gmail.com'}])]
+
+
+Creating filled out package for typeform response: at1i563sf3b57sra6uat1i5280dpkrcq
+
+
+all form fields: [PdfFormField(content='asfawf', rect=(426, 1024, 1737, 1135), page=0), PdfFormField(content='afvawf', rect=(318, 1140, 2327, 1251), page=0), PdfFormField(content='wafawfwafwa', rect=(318, 1254, 2327, 1366), page=0), PdfFormField(content='awfwafawf', rect=(318, 1369, 2327, 1480), page=0), PdfFormField(content='Nov, 11, 1111', rect=(1916, 1762, 2262, 1873), page=0), PdfFormField(content='Nov, 11, 1111', rect=(590, 2123, 1859, 2234), page=0), PdfFormField(content='Nov, 11, 1111', rect=(418, 2253, 1499, 2364), page=0), PdfFormField(content='Nov, 11, 1111', rect=(655, 2382, 1854, 2493), page=0), PdfFormField(content='Feb, 22, 2222', rect=(1953, 2382, 2329, 2493), page=0), PdfFormField(content='Jan, 11, 1111', rect=(920, 2729, 1566, 2840), page=0)]
+
+
+pdf_path: storage/original_pdf88b8b398-0249-4173-a382-03955254578d.pdf
+
+
+field to fill: content='asfawf' rect=(426, 1024, 1737, 1135) page=0
+
+
+Created rect: Rect(102.52707581227436, 246.4500601684717, 418.05054151624546, 273.16486161251504)
+
+
+Inserting text: asfawf at Rect(102.52707581227436, 246.4500601684717, 418.05054151624546, 273.16486161251504)
+
+
+Widget added and updated at Rect(102.52707581227436, 246.4500601684717, 418.05054151624546, 273.16486161251504)
+
+
+field to fill: content='afvawf' rect=(318, 1140, 2327, 1251) page=0
+
+
+Created rect: Rect(76.53429602888086, 274.3682310469314, 560.0481347773766, 301.0830324909747)
+
+
+Inserting text: afvawf at Rect(76.53429602888086, 274.3682310469314, 560.0481347773766, 301.0830324909747)
+
+
+Widget added and updated at Rect(76.53429602888086, 274.3682310469314, 560.0481347773766, 301.0830324909747)
+
+
+field to fill: content='wafawfwafwa' rect=(318, 1254, 2327, 1366) page=0
+
+
+Created rect: Rect(76.53429602888086, 301.8050541516245, 560.0481347773766, 328.76052948255114)
+
+
+Inserting text: wafawfwafwa at Rect(76.53429602888086, 301.8050541516245, 560.0481347773766, 328.76052948255114)
+
+
+Widget added and updated at Rect(76.53429602888086, 301.8050541516245, 560.0481347773766, 328.76052948255114)
+
+
+field to fill: content='awfwafawf' rect=(318, 1369, 2327, 1480) page=0
+
+
+Created rect: Rect(76.53429602888086, 329.48255114320096, 560.0481347773766, 356.19735258724427)
+
+
+Inserting text: awfwafawf at Rect(76.53429602888086, 329.48255114320096, 560.0481347773766, 356.19735258724427)
+
+
+Widget added and updated at Rect(76.53429602888086, 329.48255114320096, 560.0481347773766, 356.19735258724427)
+
+
+field to fill: content='Nov, 11, 1111' rect=(1916, 1762, 2262, 1873) page=0
+
+
+Created rect: Rect(461.13116726835136, 424.0673886883273, 544.4043321299639, 450.7821901323706)
+
+
+Inserting text: Nov, 11, 1111 at Rect(461.13116726835136, 424.0673886883273, 544.4043321299639, 450.7821901323706)
+
+
+Widget added and updated at Rect(461.13116726835136, 424.0673886883273, 544.4043321299639, 450.7821901323706)
+
+
+field to fill: content='Nov, 11, 1111' rect=(590, 2123, 1859, 2234) page=0
+
+
+Created rect: Rect(141.99759326113116, 510.9506618531889, 447.41275571600477, 537.6654632972322)
+
+
+Inserting text: Nov, 11, 1111 at Rect(141.99759326113116, 510.9506618531889, 447.41275571600477, 537.6654632972322)
+
+
+Widget added and updated at Rect(141.99759326113116, 510.9506618531889, 447.41275571600477, 537.6654632972322)
+
+
+field to fill: content='Nov, 11, 1111' rect=(418, 2253, 1499, 2364) page=0
+
+
+Created rect: Rect(100.60168471720817, 542.2382671480144, 360.77015643802645, 568.9530685920578)
+
+
+Inserting text: Nov, 11, 1111 at Rect(100.60168471720817, 542.2382671480144, 360.77015643802645, 568.9530685920578)
+
+
+Widget added and updated at Rect(100.60168471720817, 542.2382671480144, 360.77015643802645, 568.9530685920578)
+
+
+field to fill: content='Nov, 11, 1111' rect=(655, 2382, 1854, 2493) page=0
+
+
+Created rect: Rect(157.64139590854393, 573.2851985559566, 446.2093862815884, 600.0)
+
+
+Inserting text: Nov, 11, 1111 at Rect(157.64139590854393, 573.2851985559566, 446.2093862815884, 600.0)
+
+
+Widget added and updated at Rect(157.64139590854393, 573.2851985559566, 446.2093862815884, 600.0)
+
+
+field to fill: content='Feb, 22, 2222' rect=(1953, 2382, 2329, 2493) page=0
+
+
+Created rect: Rect(470.03610108303246, 573.2851985559566, 560.5294825511431, 600.0)
+
+
+Inserting text: Feb, 22, 2222 at Rect(470.03610108303246, 573.2851985559566, 560.5294825511431, 600.0)
+
+
+Widget added and updated at Rect(470.03610108303246, 573.2851985559566, 560.5294825511431, 600.0)
+
+
+field to fill: content='Jan, 11, 1111' rect=(920, 2729, 1566, 2840) page=0
+
+
+Created rect: Rect(221.4199759326113, 656.7990373044524, 376.89530685920573, 683.5138387484958)
+
+
+Inserting text: Jan, 11, 1111 at Rect(221.4199759326113, 656.7990373044524, 376.89530685920573, 683.5138387484958)
+
+
+Widget added and updated at Rect(221.4199759326113, 656.7990373044524, 376.89530685920573, 683.5138387484958)
+
+
+PDF saved successfully to filled_out_pdf_temp.pdf
+
+
+file_ids: ['filled_out_pdfc0d22159-1581-426d-9240-ffa9eab26288.pdf']
 
 

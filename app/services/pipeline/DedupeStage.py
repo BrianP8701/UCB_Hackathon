@@ -1,5 +1,5 @@
 from app.types import *
-from typing import Optional, Tuple
+from typing import Tuple
 from app.dao.PackageDao import PackageDao
 import logging
 
@@ -14,7 +14,7 @@ instructor = InstructorService()
 
 
 class MapFormField(BaseModel):
-    no_mapping: bool = Field(..., description="Whether or not the field we are looking at has maps to a field in the existing form. If none of the existing fields map to this field, output True. Otherwise if there is a mapping, output False.")
+    has_mapping: bool = Field(..., description="If this current field maps to an existing field in the form, output true. Otherwise, output false and we'll add this field as a new field in the form.")
     index: int = Field(..., description="If the field has a mapping, output the index of the field to map to. Otherwise, output -1 ")
 
 
@@ -45,12 +45,18 @@ async def update_mapping(current_index: int, existing_form_fields: List[FormFiel
     form_fields_with_same_type = get_form_fields_with_same_type(final_form, current_form_field_type)
     final_form_string = stringify_existing_form(form_fields_with_same_type)
     
+    for final_form_field in final_form:
+        if final_form_field.form_field_type == current_form_field_type and final_form_field.name == current_form_field.name and final_form_field.description == current_form_field.description:
+            final_form_field.mapping.append(current_index)
+            current_form_field.mapping.append(final_form_field.index)
+            return final_form, existing_form_fields
+    
     mapping = await instructor.completion(
         prompt=f"{final_form_string}\n\nCurrent form field to map: {current_form_field.name}\nDescription: {current_form_field.description}",
         instructor_model=MapFormField
     )
     
-    if not mapping.no_mapping:
+    if mapping.has_mapping:
         new_final_form_field = FormField(
             id=create_uuid('final_form_field'),
             name=current_form_field.name,
@@ -61,10 +67,13 @@ async def update_mapping(current_index: int, existing_form_fields: List[FormFiel
             mapping=[current_index]
         )
         final_form.append(new_final_form_field)
-        existing_form_fields[current_index].mapping.append(mapping.index)
+        current_form_field.mapping.append(mapping.index)
     else:
-        final_form[mapping.index].mapping.append(current_index)
-        existing_form_fields[current_index].mapping.append(mapping.index)
+        try:
+            final_form[mapping.index].mapping.append(current_index)
+        except IndexError:
+            logging.error(f'Index {mapping.index} out of bounds for final form with length {len(final_form)}')
+        current_form_field.mapping.append(mapping.index)
 
     return final_form, existing_form_fields
 
