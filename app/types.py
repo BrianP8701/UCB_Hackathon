@@ -13,6 +13,7 @@ class FePackageRow(BaseModel):
 
 class FeFilledOutPackage(BaseModel):
     pdfPath: str
+    email: str
 
 class FeFormField(BaseModel):
     name: str

@@ -7,8 +7,18 @@ from app.dao.PackageDao import PackageDao
 from app.pipeline import begin_pipeline_processing
 from app.formatters import *
 from app.services.PackageService import PackageService
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # List of allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"]  # Allow all headers
+)
 
 logging.basicConfig(
     filename='app.log',  # Log file name
